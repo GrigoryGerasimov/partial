@@ -1,0 +1,46 @@
+@use "sass:map";
+
+$header_theme: (
+        "primary": rgba(254, 213, 131, 0.65),
+        "contrast": rgba(252, 113, 77, 0.95),
+        "color": rgba(120, 67, 31, 0.85),
+);
+
+$border-rounding: 10% 10% 0 0;
+$card-width: 350px;
+$card-height: 200px;
+$background: rgba(252, 113, 77, 0.5);
+$shadow-contrast: 1px 1px 1px rgba(120, 67, 31), 1px 1px 1px rgba(250, 235, 215);
+$bottom-space: 45px;
+
+.teammate_page {
+  &__container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  &__main_section {
+    max-width: inherit;
+    line-height: 55px;
+    text-align: center;
+  }
+  &__profile_img {
+    display: block;
+    max-width: inherit;
+    margin-bottom: $bottom-space;
+  }
+  &__info {
+    margin-bottom: $bottom-space;
+  }
+  &__contacts {
+    margin-bottom: $bottom-space;
+  }
+  &__interests {
+    margin-bottom: $bottom-space;
+  }
+  &__work {
+    margin-bottom: $bottom-space;
+  }
+  &__feedback {
+    margin-bottom: $bottom-space;
+  }
+}

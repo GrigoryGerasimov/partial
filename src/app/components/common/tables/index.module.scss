@@ -1,0 +1,35 @@
+@use "sass:map";
+
+$table_hovering_theme: (
+        "background-header": rgba(120, 67, 31, 0.85),
+        "color-header": rgba(254, 213, 131, 0.65),
+        "background-row": rgba(252, 113, 77, 0.95),
+        "color-row": rgba(255, 255, 255, 0.95)
+);
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 20px auto;
+  &__caption {
+    margin-bottom: 35px;
+  }
+  &__head_row {
+    transition: all 0.5s linear;
+    &:hover {
+      background-color: map.get($table_hovering_theme, "background-header");
+      color: map.get($table_hovering_theme, "color-header");
+    }
+  }
+  &__row{
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      background-color: map.get($table_hovering_theme, "background-row");
+      color: map.get($table_hovering_theme, "color-row");
+    }
+    &>td {
+      padding: 20px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use "sass:map";
+
+$button_theme: (
+        "primary": rgba(254, 213, 131, 0.65),
+        "contrast": rgba(252, 113, 77, 0.95),
+        "color": rgba(120, 67, 31, 0.85),
+        "contrast-on-hover": rgba(255, 255, 255, 0.95)
+);
+
+.btn {
+  border: none;
+  outline: none;
+  appearance: none;
+  padding: 15px;
+  background-color: map.get($button_theme, "primary");
+  color: map.get($button_theme, "color");
+  border-radius: 5px;
+  margin: 10px 10px 45px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  &:hover{
+    background-color: map.get($button_theme, "contrast");
+    color: map.get($button_theme, "contrast-on-hover");
+  }
+  &_disabled {
+    opacity: 0.5;
+  }
+}

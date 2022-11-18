@@ -1,0 +1,7 @@
+{
+  "unsplashEndpoint": "https://images.unsplash.com/",
+  "baseApiEndpoint": "https://635d6812cb6cf98e56b41a71.mockapi.io/api/v1/",
+  "sentry_DNS": "https://e08a34421cbb442599d20cdb68ab809c@o1419404.ingest.sentry.io/4504152227708928",
+  "isFireBase": false,
+  "isMockApi": true
+}

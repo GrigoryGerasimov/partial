@@ -1,0 +1,49 @@
+@use "sass:map";
+
+$header_theme: (
+        "primary": rgba(254, 213, 131, 0.65),
+        "contrast": rgba(252, 113, 77, 0.95),
+        "color": rgba(120, 67, 31, 0.85),
+);
+
+$navlink_underlining: none;
+
+.header_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 20px 45px;
+  background-color: map.get($header_theme, "primary");
+  color: map.get($header_theme, "color");
+}
+
+.navlogo {
+  color: map.get($header_theme, "contrast");
+  text-decoration: $navlink_underlining;
+  margin-right: 55px;
+}
+
+.navlink_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  &__list_item {
+    display: inline-block;
+    margin: 10px 30px;
+    text-decoration: $navlink_underlining;
+    color: map.get($header_theme, "color");
+    transition: transform 0.5s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .header_container, .navlink_list {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+  }
+}
