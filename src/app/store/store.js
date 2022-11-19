@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { mockApi } from './api.js'
+import { setupListeners } from '@reduxjs/toolkit/query'
 // import { teammatesSlice, hobbiesSlice, socialnetsSlice } from "./remove_reducer.js";
 
 // const rootReducer = combineReducers({
@@ -14,3 +15,5 @@ export const store = configureStore({
 	},
 	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(mockApi.middleware),
 })
+
+setupListeners(store.dispatch)
