@@ -7,6 +7,7 @@ import {
 	BoldText,
 	QuoteText,
 } from '../typography'
+import { Badge } from '../../common/Badge.jsx'
 import PropTypes from 'prop-types'
 
 const TeammatePageInfo = ({ infoClass, data }) => {
@@ -21,8 +22,9 @@ const TeammatePageInfo = ({ infoClass, data }) => {
 				<BigTitle>{data.age}</BigTitle>
 				<hr />
 			</div>
-			<div className='border border-red-700 border-4'>
-				Должность:<BigTitle>{data.position}</BigTitle>BADGE
+			<div>
+				Должность:<BigTitle>{data.position}</BigTitle>
+				{data.role === 'teamlead' && <Badge color='red' label='TL'/>}
 				<hr />
 			</div>
 			<div>

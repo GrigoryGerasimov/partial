@@ -10,7 +10,7 @@ export const teammates = [
 		role: 'teamlead',
 		intro: 'Начинающий ReactJS фронт-энд разработчик',
 		imgPath: 'https://i.kinja-img.com/gawker-media/image/upload/jx5u6rwdhx0fzxty1mhn.jpg',
-		hobbies: ['#webtech', '#webdes', '#mus', '#vid', '#cul', '#cyc', 'hik'],
+		hobbies: ['#webtech', '#webdes', '#mus', '#vid', '#cul', '#cyc', '#hik'],
 		technologies: {
 			html: '55',
 			css: '40',
@@ -116,7 +116,7 @@ export const teammates = [
 		role: 'frontendengineer',
 		intro: 'Начинающий ReactJS фронт-энд разработчик',
 		imgPath: 'https://media.discordapp.net/attachments/1042002359733198918/1043534965427679383/U6oyOAbk1to.jpg',
-		hobbies: ['#cul', '#cyc', 'hik'],
+		hobbies: ['#cul', '#cyc', '#hik'],
 		technologies: {
 			html: '90',
 			css: '90',

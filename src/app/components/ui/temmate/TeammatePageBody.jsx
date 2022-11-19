@@ -27,7 +27,7 @@ const TeammatePageBody = ({ data }) => {
 						<BoldText>Задачи на проекте:</BoldText>
 						<UnorderedList>
 							{data.tasks.map(task => (
-								<ListElement key={task[0].codePointAt(0) + task[task.length - 1].codePointAt(0)}>
+								<ListElement key={task.length}>
 									{task}
 								</ListElement>
 							))}

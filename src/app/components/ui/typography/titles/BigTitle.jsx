@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export const BigTitle = ({ children }) => {
-	return <h2>{children}</h2>
+	return <h2 className='text-xl'>{children}</h2>
 }
 
 BigTitle.propTypes = {
