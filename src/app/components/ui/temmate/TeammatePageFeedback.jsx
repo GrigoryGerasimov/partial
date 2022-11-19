@@ -13,7 +13,7 @@ const TeammatePageFeedback = ({ feedbackClass }) => {
 		<article className={feedbackClass}>
 			<FormLayout onSubmit={handleSubmit}>
 				<FormBasicField
-					formEntityClassname='form-entity'
+					formEntityClassname='form-entity flex flex-row justify-between w-80'
 					id='firstName'
 					label='Имя'
 					name='firstName'
@@ -25,7 +25,7 @@ const TeammatePageFeedback = ({ feedbackClass }) => {
 					autoFocus
 				/>
 				<FormBasicField
-					formEntityClassname='form-entity'
+					formEntityClassname='form-entity flex flex-row justify-between border-1'
 					id='lastName'
 					label='Фамилия'
 					name='lastName'
@@ -36,7 +36,7 @@ const TeammatePageFeedback = ({ feedbackClass }) => {
 					onKeyDown={handleFormScroll}
 				/>
 				<FormBasicField
-					formEntityClassname='form-entity'
+					formEntityClassname='form-entity flex flex-row justify-between border-1'
 					id='email'
 					type='email'
 					label='E-Mail'
@@ -48,7 +48,7 @@ const TeammatePageFeedback = ({ feedbackClass }) => {
 					onKeyDown={handleFormScroll}
 				/>
 				<FormBasicField
-					formEntityClassname='form-entity'
+					formEntityClassname='form-entity flex flex-row justify-between border-1'
 					id='tel'
 					type='tel'
 					label='Телефон'
@@ -60,7 +60,7 @@ const TeammatePageFeedback = ({ feedbackClass }) => {
 					onKeyDown={handleFormScroll}
 				/>
 				<FormTextareaField
-					formEntityClassname='form-entity'
+					formEntityClassname='form-entity flex flex-row justify-between border-1'
 					id='msg'
 					label='Сообщение'
 					name='msg'

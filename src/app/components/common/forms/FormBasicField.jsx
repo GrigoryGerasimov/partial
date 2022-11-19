@@ -16,7 +16,7 @@ export const FormBasicField = ({
 }) => {
 	return (
 		<div className={formEntityClassname}>
-			<label htmlFor={id}>{label}</label>
+			<label htmlFor={id}>{label} </label>
 			<input
 				type={type}
 				id={id}

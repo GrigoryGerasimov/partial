@@ -8,6 +8,7 @@ import TeammatePage from './components/pages/TeammatePage'
 import LoginPage from './components/pages/loginPage'
 import SingupPage from './components/pages/singupPage'
 import AuthLayout from './layouts/authLayout.jsx'
+import FavoritePage from './components/pages/favoritePage.jsx'
 
 export const routes = [
 	{ path: '', element: <MainPage /> },
@@ -42,7 +43,9 @@ export const routes = [
 			{ path: '*', element: <Navigate to='' /> },
 		],
 	},
-	{ path: 'feedback', element: 'FeedbackPage' },
-	{ path: 'contact', element: 'ContactPage' },
+	{
+		path: 'favorite',
+		element: <FavoritePage />,
+	},
 	{ path: '*', element: <NotFoundPage /> },
 ]
