@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const TeammatePageInterestsBlock = ({ interestsBlockClass, hobbiesList }) => {
 	return (
 		<article className={interestsBlockClass}>
-			<BigTitle>Мои увлечения</BigTitle>
+			<BigTitle>Мои увлечения: </BigTitle>
 			<UnorderedList>
 				{hobbiesList.map((hobby) => (
 					<ListElement key={hobby}>{hobby}</ListElement>
