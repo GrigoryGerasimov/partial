@@ -14,19 +14,20 @@ const TeammateCard = ({ data }) => {
 	}
 
 	return (
-		<section className='w-max h-max drop-shadow-xl rounded-t-2xl relative cursor-pointer transition-transform hover:scale-110'>
+		<section className='flex flex-col justify-between max-w-[310px] mb-10 bg-slate-50 transition duration-400 hover:shadow-lg hover:shadow-indigo-200  rounded-xl relative'>
 			<TeammatePic
-				imgClass='w-96 h-56 rounded-t-2xl object-fill'
+				imgClass='w-[100%] h-56 rounded-2xl object-fill'
 				imgPath={data.imgPath}
 			/>
-			<TeammateInfo
-				infoClass='flex flex-col items-center justify-center w-96 h-20 bg-red-400 bg-opacity-70 text-white text-opacity-95 absolute top-36 leading-6 tracking-wider'
-				data={data}
-			/>
-			<section className='flex flex-grow flex-shrink-0'>
-				<Button onClick={() => navigate(`/teammates/${data.id}`)}>Открыть</Button>
-				<Button onClick={() => handleAddFavorite(data._id)}>В избранное</Button>
-			</section>
+			<TeammateInfo infoClass='my-4 px-3 text-center' data={data} />
+			<div className='flex justify-around px-2 mb-5'>
+				<div className='w-2/5'>
+					<Button onClick={() => navigate(`/teammates/${data.id}`)}>Открыть</Button>
+				</div>
+				<div className='w-2/5'>
+					<Button onClick={() => handleAddFavorite(data._id)}>Избранное</Button>
+				</div>
+			</div>
 		</section>
 	)
 }

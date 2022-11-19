@@ -12,11 +12,13 @@ const TeammatesListPage = () => {
 	return !isLoading && isSuccess ? (
 		<>
 			<ComponentTitle title='Наша команда' />
-			<section className='grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-16 justify-center items-baseline w-full h-full p-12'>
+			<div className='flex flex-wrap justify-around'>
 				{data.map((teammate) => (
-					<TeammateCard key={teammate.id} data={teammate} />
+					<div key={teammate.id} className='w-1/3 flex px-2 justify-around'>
+						<TeammateCard data={teammate} />
+					</div>
 				))}
-			</section>
+			</div>
 		</>
 	) : (
 		<Loader />

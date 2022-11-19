@@ -1,4 +1,5 @@
 import React from 'react'
+import ComponentContainer from '../common/componentContainer.jsx'
 // import Button from '../common/Button'
 // import { useMockapiService } from '../../hooks/useMockapiService.jsx'
 import TeammatesListPage from './TeammatesListPage.jsx'
@@ -17,7 +18,9 @@ const Main = () => {
 				<span>Статус: </span>
 				<span>{progressStatus}</span>
 			 </div> */}
-			<TeammatesListPage />
+			<ComponentContainer>
+				<TeammatesListPage />
+			</ComponentContainer>
 		</main>
 	)
 }

@@ -1,14 +1,13 @@
 import React from 'react'
-import { RegularTitle, BigTitle, AverageTitle } from '../typography'
 import { getAgeFormat } from '../../../utils/getAgeFormat.js'
 import PropTypes from 'prop-types'
 
 export const TeammateInfo = ({ infoClass, data }) => {
 	return (
 		<article className={infoClass}>
-			<RegularTitle>{`${data.firstName} ${data.lastName}`}</RegularTitle>
-			<BigTitle>{`${data.age} ${getAgeFormat(data.age)}`}</BigTitle>
-			<AverageTitle>{data.intro}</AverageTitle>
+			<div className='text-3xl mb-2'>{`${data.firstName} ${data.lastName}`}</div>
+			<div className='text-lg'>{`${data.age} ${getAgeFormat(data.age)}`}</div>
+			<div className='text-lg'>{data.intro}</div>
 		</article>
 	)
 }
