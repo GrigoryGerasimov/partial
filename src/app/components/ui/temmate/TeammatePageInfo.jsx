@@ -13,6 +13,7 @@ const TeammatePageInfo = ({ infoClass, data }) => {
 	return (
 		<div className={infoClass}>
 			<MainTitle>{`${data.firstName} ${data.lastName}`}</MainTitle>
+			<BigTitle>{data.age}</BigTitle>
 			<BigTitle>{data.position}</BigTitle>
 			<RegularTitle>
 				<BoldText>{data.team}</BoldText>

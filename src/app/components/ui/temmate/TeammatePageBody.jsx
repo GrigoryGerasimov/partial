@@ -4,7 +4,6 @@ import TeammatePic from '../temmateCard/TeammatePic.jsx'
 import TeammatePageInfo from './TeammatePageInfo.jsx'
 // import TeammatePageContactsList from "./TeammatePageContactsList.jsx";
 import TeammatePageInterestsBlock from './TeammatePageInterestsBlock.jsx'
-// import TeammatePageWorkingExperience from "./TeammatePageWorkingExperience.jsx";
 import TeammatePageFeedback from './TeammatePageFeedback.jsx'
 import Button from '../../common/Button'
 import PropTypes from 'prop-types'
@@ -21,7 +20,6 @@ const TeammatePageBody = ({ data }) => {
 				interestsBlockClass='mb-11'
 				hobbiesList={data.hobbies}
 			/>
-			{/* <TeammatePageWorkingExperience workingExperienceClass="mb-11"/> */}
 			<Button onClick={() => navigate(-1)}>К команде разработки</Button>
 			<TeammatePageFeedback feedbackClass='mb-11' />
 		</div>
