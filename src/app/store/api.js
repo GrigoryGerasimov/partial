@@ -6,6 +6,7 @@ export const mockApi = createApi({
 	baseQuery: fetchBaseQuery({
 		baseUrl: config.baseApiEndpoint,
 	}),
+	refetchOnFocus: true,
 	endpoints: (build) => ({
 		receiveTeammates: build.query({
 			query: () => ({
