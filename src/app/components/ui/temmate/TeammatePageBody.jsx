@@ -2,12 +2,13 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import TeammatePic from '../temmateCard/TeammatePic.jsx'
 import TeammatePageInfo from './TeammatePageInfo.jsx'
-// import TeammatePageContactsList from './TeammatePageContactsList.jsx'
+import TeammatePageContactsList from './TeammatePageContactsList.jsx'
 import TeammatePageInterestsBlock from './TeammatePageInterestsBlock.jsx'
 import TeammatePageFeedback from './TeammatePageFeedback.jsx'
 import Button from '../../common/Button'
-import PropTypes from 'prop-types'
 import TeamateProgress from '../temmateCard/TeamateProgress.jsx'
+import { BoldText, ListElement, UnorderedList } from '../typography'
+import PropTypes from 'prop-types'
 
 const TeammatePageBody = ({ data }) => {
 	const navigate = useNavigate()
@@ -23,19 +24,14 @@ const TeammatePageBody = ({ data }) => {
 							imgPath={data.imgPath}
 						/>
 						<div className='border border-red-700 border-4'>BOOKMARK</div>
-						<div className='border border-red-700 border-4'>
-							Тут должны данные грузиться с базы?
-							<p>
-								Чем занимался на проекте <br />
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nisi
-								culpa unde corrupti veniam quasi. Ullam inventore, magni assumenda, odit,
-								possimus accusantium veniam corporis excepturi eum molestias facere
-								perspiciatis soluta.lorem Lorem ipsum dolor, sit amet consectetur
-								adipisicing elit. Molestiae recusandae corporis ab eligendi maiores
-								doloribus, repudiandae quod ex velit quis! Veniam, nemo. Quod sint aut
-								odit neque! Eaque, quas. Voluptatibus?
-							</p>
-						</div>
+						<BoldText>Задачи на проекте:</BoldText>
+						<UnorderedList>
+							{data.tasks.map(task => (
+								<ListElement key={task[0].codePointAt(0) + task[task.length - 1].codePointAt(0)}>
+									{task}
+								</ListElement>
+							))}
+						</UnorderedList>
 					</div>
 				</div>
 				<div className='lg:w-1/3 md:w-1/3 sm:w-full'>
@@ -59,9 +55,8 @@ const TeammatePageBody = ({ data }) => {
 
 			<div>
 				<div className='border border-red-700 border-4'>PORTFOLIO: </div>
-				<div className='border border-red-700 border-4'>SOCIAL NETWORK</div>
-				{/* <TeammatePageContactsList contactsListClass='mb-11' contacts={data.contacts} /> */}
 				<div className='flex justify-around mt-10 flex-wrap'>
+					<TeammatePageContactsList contactsListClass='mb-11' contacts={data.contacts} />
 					<TeammatePageFeedback feedbackClass='mb-11' />
 					<div className='self-center'>
 						<Button onClick={() => navigate(-1)}>К команде разработки</Button>

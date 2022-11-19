@@ -1,35 +1,41 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { BoldText, RegularText, UnorderedList } from '../typography'
+import { useReceiveSocialnetsQuery } from '../../../store/api'
+import Loader from '../../common/Loader'
 import PropTypes from 'prop-types'
 
 const TeammatePageContactsList = ({ contactsListClass, contacts }) => {
-	return (
+	const { isLoading, isSuccess, data: contactsData } = useReceiveSocialnetsQuery()
+
+	return !isLoading && isSuccess ? (
 		<article className={contactsListClass}>
-			<RegularText>
-				Чаще всего меня можно найти здесь <BoldText>здесь:</BoldText>
-			</RegularText>
-			<UnorderedList>
-				{Object.keys(contacts).map((contactName) => (
-					<Link
-						key={contacts[contactName].svgPath.slice(0, 21)}
-						to={contacts[contactName].urlPath}
-						title={contacts[contactName].name}
-					>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='25'
-							height='25'
-							fill='currentColor'
-							viewBox='0 0 16 16'
+			<div className='flex flex-row'>
+				<RegularText>
+					Чаще всего меня можно найти здесь <BoldText>здесь:</BoldText>
+				</RegularText>
+				<UnorderedList listClass='flex justify-center'>
+					{Object.keys(contacts).map((contactName) => (
+						<a
+							key={contacts[contactName]._id}
+							href={contacts[contactName].urlPath}
 						>
-							<path d={contacts[contactName].svgPath} />
-						</svg>
-					</Link>
-				))}
-			</UnorderedList>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								width='25'
+								height='25'
+								fill='currentColor'
+								viewBox='0 0 16 16'
+								className="ml-5"
+							>
+								<path d={contactsData.find(contactsItem => contactsItem._id === contacts[contactName]._id).svgPath} />
+							</svg>
+						</a>
+					))}
+				</UnorderedList>
+			</div>
+
 		</article>
-	)
+	) : <Loader/>
 }
 
 export default TeammatePageContactsList

@@ -26,13 +26,13 @@ export const teammates = [
 			'настройка mockapi и redux createApi',
 		],
 		contacts: {
-			linkedIn: {
-				_id: '#linkedIn',
+			linkedin: {
+				_id: '#linkedin',
 				urlPath: 'https://www.linkedin.com/in/grigory-gerasimov-47898516b/',
 			},
-			tme: {
+			telegram: {
 				_id: '#telegram',
-				urlPath: '@GrigoryGerasimov',
+				urlPath: 'https://t.me/GrigoryGerasimov',
 			},
 		},
 	},
@@ -62,13 +62,13 @@ export const teammates = [
 			'разработка прогрессбара',
 		],
 		contacts: {
-			linkedIn: {
-				_id: '#linkedIn',
-				urlPath: 'https://www.linkedin.com/in/jane-doe',
-			},
-			tme: {
+			telegram: {
 				_id: '#telegram',
-				urlPath: '@JaneDoe',
+				urlPath: 'https://t.me/realing29',
+			},
+			github: {
+				_id: '#github',
+				urlPath: 'https://github.com/realing29',
 			},
 		},
 	},
@@ -77,7 +77,7 @@ export const teammates = [
 		_id: 'mate3',
 		firstName: 'Станислав',
 		lastName: 'Кадыков',
-		age: '',
+		age: '26',
 		team: 'Hackathon Team 5',
 		position: 'Front-End Engineer',
 		role: 'frontendengineer',
@@ -99,13 +99,9 @@ export const teammates = [
 			'more to come',
 		],
 		contacts: {
-			linkedIn: {
-				_id: '#linkedIn',
-				urlPath: 'https://www.linkedin.com/in/mickey-ramirez',
-			},
-			tme: {
-				_id: '#telegram',
-				urlPath: '@MickeyRamirez',
+			discord: {
+				_id: '#discord',
+				urlPath: '@Tai_SaWFly',
 			},
 		},
 	},
@@ -133,13 +129,13 @@ export const teammates = [
 			'more to come',
 		],
 		contacts: {
-			linkedIn: {
-				_id: '#linkedIn',
-				urlPath: 'https://www.linkedin.com/in/janusz-wasilewski',
+			linkedin: {
+				_id: '#linkedin',
+				urlPath: 'https://www.linkedin.com/in/artem-kuznetsov-942760243',
 			},
-			tme: {
-				_id: '#telegram',
-				urlPath: '@JanuszWasilewski',
+			facebook: {
+				_id: '#facebook',
+				urlPath: 'https://www.facebook.com/artemiusz.kuzniecow?mibextid=ZbWKwL',
 			},
 		},
 	},

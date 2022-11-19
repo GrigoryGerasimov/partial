@@ -9,7 +9,7 @@ import { toast } from 'react-toastify'
 
 const MockapiServiceContext = React.createContext()
 
-export const useMockapiService = () => useContext(MockapiServiceContext)
+export const remove_useMockapiService = () => useContext(MockapiServiceContext)
 
 const progressConsts = {
 	IDLE: 'Загрузка ещё не началась',
