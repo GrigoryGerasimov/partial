@@ -7,6 +7,7 @@ import TeammatePageInterestsBlock from './TeammatePageInterestsBlock.jsx'
 import TeammatePageFeedback from './TeammatePageFeedback.jsx'
 import Button from '../../common/Button'
 import PropTypes from 'prop-types'
+import TeamateProgress from '../temmateCard/TeamateProgress.jsx'
 
 const TeammatePageBody = ({ data }) => {
 	const navigate = useNavigate()
@@ -21,6 +22,20 @@ const TeammatePageBody = ({ data }) => {
 							imgClass='block max-w-full mb-11 w-80 rounded-lg'
 							imgPath={data.imgPath}
 						/>
+						<div className='border border-red-700 border-4'>BOOKMARK</div>
+						<div className='border border-red-700 border-4'>
+							Тут должны данные грузиться с базы?
+							<p>
+								Чем занимался на проекте <br />
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nisi
+								culpa unde corrupti veniam quasi. Ullam inventore, magni assumenda, odit,
+								possimus accusantium veniam corporis excepturi eum molestias facere
+								perspiciatis soluta.lorem Lorem ipsum dolor, sit amet consectetur
+								adipisicing elit. Molestiae recusandae corporis ab eligendi maiores
+								doloribus, repudiandae quod ex velit quis! Veniam, nemo. Quod sint aut
+								odit neque! Eaque, quas. Voluptatibus?
+							</p>
+						</div>
 					</div>
 				</div>
 				<div className='lg:w-1/3 md:w-1/3 sm:w-full'>
@@ -30,26 +45,26 @@ const TeammatePageBody = ({ data }) => {
 							interestsBlockClass='mb-11'
 							hobbiesList={data.hobbies}
 						/>
-						<div className='border border-red-700 border-1'>PROGRESS BAR</div>
+						<div>
+							<TeamateProgress
+								HTML={Number(data.technologies.html)}
+								CSS={Number(data.technologies.css)}
+								JScript={Number(data.technologies.js)}
+								React={Number(data.technologies.react)}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<div>
-				3
-				<div className='border border-red-700 border-1'>
-					<div className='border border-red-700 border-1'>PORTFOLIO: </div>
-					<div className='border border-red-700 border-1 flex flex-col '>
-						Soc network:
-						<div className='flex gap-5'>
-							<a href={data.contacts.linkedIn.urlPath}>LinkedIn</a>
-							<a href={data.contacts.tme.urlPath}>Telegram</a>
-						</div>
-					</div>
-					{/* <TeammatePageContactsList contactsListClass='mb-11' contacts={data.contacts} /> */}
-					<div className='border border-red-700 border-1'>
+				<div className='border border-red-700 border-4'>PORTFOLIO: </div>
+				<div className='border border-red-700 border-4'>SOCIAL NETWORK</div>
+				{/* <TeammatePageContactsList contactsListClass='mb-11' contacts={data.contacts} /> */}
+				<div className='flex justify-around mt-10 flex-wrap'>
+					<TeammatePageFeedback feedbackClass='mb-11' />
+					<div className='self-center'>
 						<Button onClick={() => navigate(-1)}>К команде разработки</Button>
-						<TeammatePageFeedback feedbackClass='mb-11' />
 					</div>
 				</div>
 			</div>
