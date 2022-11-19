@@ -1,5 +1,5 @@
 import React from 'react'
-import { RegularTitle, AverageTitle } from '../../../components/ui/typography'
+import { RegularTitle, AverageTitle } from '../typography'
 import PropTypes from 'prop-types'
 
 export const TeammateInfo = ({ infoClass, data }) => {

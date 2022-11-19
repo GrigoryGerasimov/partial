@@ -1,7 +1,7 @@
 import React from 'react'
-import TeammateCard from '../TeammateCard'
-import Loader from '../../../components/common/Loader'
-import { useReceiveTeammatesQuery } from '../../../store/api.js'
+import TeammateCard from '../ui/temmateCard'
+import Loader from '../common/Loader'
+import { useReceiveTeammatesQuery } from '../../store/api.js'
 
 const TeammatesList = () => {
 	const { isLoading, isSuccess, data } = useReceiveTeammatesQuery()

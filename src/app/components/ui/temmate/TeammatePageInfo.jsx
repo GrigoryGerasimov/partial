@@ -6,7 +6,7 @@ import {
 	AverageTitle,
 	BoldText,
 	QuoteText,
-} from '../../../../components/ui/typography'
+} from '../typography'
 import PropTypes from 'prop-types'
 
 const TeammatePageInfo = ({ infoClass, data }) => {

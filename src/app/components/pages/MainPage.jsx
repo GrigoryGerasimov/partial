@@ -1,7 +1,7 @@
 import React from 'react'
 // import { Navigate } from "react-router-dom";
-import Button from '../../../components/common/Button'
-import { useMockapiService } from '../../../hooks/useMockapiService.jsx'
+import Button from '../common/Button'
+import { useMockapiService } from '../../hooks/useMockapiService.jsx'
 
 const Main = () => {
 	const { handleUploadMockData, progressInPercents, progressStatus } = useMockapiService()

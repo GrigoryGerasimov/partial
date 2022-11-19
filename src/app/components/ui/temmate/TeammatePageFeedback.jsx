@@ -1,9 +1,9 @@
 import React from 'react'
-import { FormLayout } from '../../../../components/common/forms/FormLayout.jsx'
-import { FormBasicField } from '../../../../components/common/forms/FormBasicField.jsx'
-import { FormTextareaField } from '../../../../components/common/forms/FormTextareaField.jsx'
-import { useForm } from '../../../../hooks/useForm.jsx'
-import Button from '../../../../components/common/Button'
+import { FormLayout } from '../../common/forms/FormLayout.jsx'
+import { FormBasicField } from '../../common/forms/FormBasicField.jsx'
+import { FormTextareaField } from '../../common/forms/FormTextareaField.jsx'
+import { useForm } from '../../../hooks/useForm.jsx'
+import Button from '../../common/Button'
 import PropTypes from 'prop-types'
 
 const TeammatePageFeedback = ({ feedbackClass }) => {

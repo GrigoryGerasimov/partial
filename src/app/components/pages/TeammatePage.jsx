@@ -1,9 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { ContainerWrapper } from '../../../components/common/ContainerWrapper.jsx'
-import TeammatePageBody from './pageComponents/TeammatePageBody.jsx'
-import { useReceiveTeammatesByIdQuery } from '../../../store/api.js'
-import Loader from '../../../components/common/Loader'
+import { ContainerWrapper } from '../common/ContainerWrapper.jsx'
+import TeammatePageBody from '../ui/temmate/TeammatePageBody.jsx'
+import { useReceiveTeammatesByIdQuery } from '../../store/api.js'
+import Loader from '../common/Loader'
 
 const TeammatePage = () => {
 	const { mateId } = useParams()

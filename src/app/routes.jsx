@@ -1,16 +1,16 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
-import PageNotFound from './components/PageNotFound.jsx'
-import Main from './pages/main/MainPage'
-import Teammates from './pages/teammates/Teammates'
-import TeammatesList from './pages/teammates/TeammatesList'
-import TeammatePage from './pages/teammates/TeammatePage'
+import PageNotFound from './components/pages/PageNotFound.jsx'
+import MainPage from './components/pages/MainPage'
+import TeammatesLayout from './layouts/TeammatesLayout'
+import TeammatesList from './components/pages/TeammatesList'
+import TeammatePage from './components/pages/TeammatePage'
 
 export const routes = [
-	{ path: '', element: <Main /> },
+	{ path: '', element: <MainPage /> },
 	{
 		path: 'teammates',
-		element: <Teammates />,
+		element: <TeammatesLayout />,
 		children: [
 			{ path: '', element: <TeammatesList /> },
 			{ path: ':mateId', element: <TeammatePage /> },
