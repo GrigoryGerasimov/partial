@@ -1,14 +1,14 @@
 import React from 'react'
-import Button from '../common/Button'
-import { useMockapiService } from '../../hooks/useMockapiService.jsx'
+// import Button from '../common/Button'
+// import { useMockapiService } from '../../hooks/useMockapiService.jsx'
 import TeammatesListPage from './TeammatesListPage.jsx'
 
 const Main = () => {
-	const { handleUploadMockData, progressInPercents, progressStatus } = useMockapiService()
+	// const { handleUploadMockData, progressInPercents, progressStatus } = useMockapiService()
 
 	return (
 		<main>
-			 <Button onClick={handleUploadMockData}>Init</Button>
+			{/* <Button onClick={handleUploadMockData}>Init</Button>
 			 <div>
 				<span>Процесс загрузки данных: </span>
 				<span>{progressInPercents}</span>
@@ -16,8 +16,8 @@ const Main = () => {
 			 <div>
 				<span>Статус: </span>
 				<span>{progressStatus}</span>
-			 </div>
-			<TeammatesListPage/>
+			 </div> */}
+			<TeammatesListPage />
 		</main>
 	)
 }

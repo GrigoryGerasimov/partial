@@ -3,6 +3,7 @@ import TeammateCard from '../ui/temmateCard'
 import { useReceiveTeammatesQuery } from '../../store/api'
 import Button from '../common/Button'
 import favoriteService from '../../services/favoriteService'
+import ComponentTitle from '../common/componentTitle'
 
 const FavoritePage = () => {
 	const { data } = useReceiveTeammatesQuery()
@@ -26,11 +27,6 @@ const FavoritePage = () => {
 		return returnData
 	}
 
-	const handleAddFavorite = (id) => {
-		const data = favoriteService.addFavorite(id)
-		setFavorite(data)
-	}
-
 	const handleRemoveFavoriteOnPage = (id) => {
 		favoriteService.removeFavorite(id)
 		const favoriteWithRemovedId = favorite.filter((f) => f._id !== id)
@@ -39,14 +35,7 @@ const FavoritePage = () => {
 
 	return (
 		<>
-			{/* must delete */}
-			<button className='m-3' onClick={() => handleAddFavorite('mate1')}>
-				add favorite 1
-			</button>
-			<button className='m-3' onClick={() => handleAddFavorite('mate2')}>
-				add favorite 2
-			</button>
-			{/* must delete */}
+			<ComponentTitle title='Favorite Teammates' />
 			<section className='grid grid-cols-3 grid-rows-2 gap-y-10 gap-x-16 justify-center items-baseline w-full h-full p-12'>
 				{renderData && renderData.length !== 0 ? (
 					renderData.map((t) => (
