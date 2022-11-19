@@ -3,7 +3,7 @@ import {
 	asyncTeammatesActions,
 	asyncHobbiesActions,
 	asyncSocialnetsActions,
-} from './actions.js'
+} from './remove_actions.js'
 
 const { receiveAsyncTeammates, createAsyncTeammates } = asyncTeammatesActions
 const { receiveAsyncHobbies, createAsyncHobbies } = asyncHobbiesActions

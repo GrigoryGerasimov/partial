@@ -1,5 +1,4 @@
 {
-	"unsplashEndpoint": "https://images.unsplash.com/",
 	"baseApiEndpoint": "https://635d6812cb6cf98e56b41a71.mockapi.io/api/v1/",
 	"isFireBase": false,
 	"isMockApi": true

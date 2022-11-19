@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { asyncTeammatesActions, asyncHobbiesActions } from '../store/actions.js'
-import { teammatesLoadingStatus } from '../store/selectors.js'
+import { asyncTeammatesActions, asyncHobbiesActions } from '../store/remove_actions.js'
+import { teammatesLoadingStatus } from '../store/remove_selectors.js'
 import Loader from '../components/common/Loader'
 
 const withPreLoader = (Component) => (props) => {
