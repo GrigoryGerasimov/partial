@@ -13,9 +13,8 @@ const TeammateCard = ({ data }) => {
 			onClick={() => navigate(`/teammates/${data.id}`)}
 		>
 			<TeammatePic
-				imgClass='w-80 h-48 rounded-t-2xl'
+				imgClass='w-80 h-48 rounded-t-2xl object-fill'
 				imgPath={data.imgPath}
-				imgParams='?fit=crop&w=350&q=200'
 			/>
 			<TeammateInfo
 				infoClass='flex flex-col items-center justify-center w-80 h-16 bg-red-400 bg-opacity-50 text-white text-opacity-95 absolute top-32 leading-6 tracking-wider'
