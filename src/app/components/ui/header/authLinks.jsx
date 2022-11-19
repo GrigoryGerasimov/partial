@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const NavLinks = () => {
+const AuthLinks = () => {
 	return (
 		<div>
 			<NavLink
@@ -21,4 +21,4 @@ const NavLinks = () => {
 	)
 }
 
-export default NavLinks
+export default AuthLinks
