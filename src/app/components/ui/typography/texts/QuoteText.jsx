@@ -1,17 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const quoteTextStyles = {
-    width: "fit-content",
-    margin: "0 auto",
-    padding: "40px 100px",
-    borderLeft: "1px dashed rgba(120, 67, 31, 0.85)",
-    borderRight: "1px dashed rgba(120, 67, 31, 0.85)"
-};
-
 export const QuoteText = ({ children }) => {
     return (
-        <blockquote style={quoteTextStyles}>
+        <blockquote className="w-max my-0 mx-auto py-10 px-28 border-l-1 border-r-1 border-dashed border-yellow-900 border-opacity-90">
             {children}
         </blockquote>
     );

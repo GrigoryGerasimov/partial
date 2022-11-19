@@ -1,6 +1,6 @@
 import axios from "axios";
 import configFile from "../../config.json";
-import { loggingService } from "./loggingService.js";
+import { toast } from "react-toastify";
 
 const http = axios.create({
     timeout: 10000,
@@ -19,7 +19,8 @@ http.interceptors.response.use(res => {
     return res;
 }, error => {
     if (!error.response && error.response.status >= 500) {
-        loggingService.log();
+        const { message } = error.response.data;
+        toast.error(message);
     }
     return Promise.reject(error);
 });

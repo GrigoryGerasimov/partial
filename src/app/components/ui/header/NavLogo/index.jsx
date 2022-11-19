@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 import { MainTitle } from "../../typography";
 import PropTypes from "prop-types";
 
-const NavLogo = ({ logoClass }) => {
+const NavLogo = ({ label }) => {
     return (
         <MainTitle>
-            <NavLink to="/" className={logoClass}>
-                T.E.A.M.
+            <NavLink to="/" className="mr-14 no-underline text-red-400 text-opacity-95">
+                {label}
             </NavLink>
         </MainTitle>
     );
@@ -16,5 +16,5 @@ const NavLogo = ({ logoClass }) => {
 export default NavLogo;
 
 NavLogo.propTypes = {
-    logoClass: PropTypes.string
+    label: PropTypes.string
 };

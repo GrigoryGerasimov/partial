@@ -2,7 +2,6 @@ import React from "react";
 import { BigTitle, ItalicText } from "../../ui/typography";
 import { TableHeader } from "./TableHeader.jsx";
 import PropTypes from "prop-types";
-import styles from "./index.module.scss";
 
 export const TableLayout = ({ captionTitle, children }) => {
     if (!React.Children.count(children)) {
@@ -13,8 +12,8 @@ export const TableLayout = ({ captionTitle, children }) => {
         );
     };
     return (
-        <table className={styles.table}>
-            <caption className={styles.table__caption}>
+        <table className="w-full border-collapse text-center my-5 mx-auto">
+            <caption className="mb-6">
                 <BigTitle>{captionTitle}</BigTitle>
             </caption>
             <TableHeader/>

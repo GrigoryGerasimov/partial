@@ -1,11 +1,16 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { teammatesSlice, hobbiesSlice } from "./reducer.js";
+import { configureStore } from "@reduxjs/toolkit";
+import { mockApi } from "./api.js";
+// import { teammatesSlice, hobbiesSlice, socialnetsSlice } from "./reducer.js";
 
-const rootReducer = combineReducers({
-    teammates: teammatesSlice.reducer,
-    hobbies: hobbiesSlice.reducer
-});
+// const rootReducer = combineReducers({
+//     teammates: teammatesSlice.reducer,
+//     hobbies: hobbiesSlice.reducer,
+//     socialnets: socialnetsSlice.reducer
+// });
 
 export const store = configureStore({
-    reducer: rootReducer
+    reducer: {
+        [mockApi.reducerPath]: mockApi.reducer
+    },
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(mockApi.middleware)
 });

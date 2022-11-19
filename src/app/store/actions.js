@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { teammatesService } from "../services/teammatesService.js";
 import { hobbiesService } from "../services/hobbiesService.js";
+import { socialnetsService } from "../services/socialnetsService.js";
 
 export const asyncTeammatesActions = {
     receiveAsyncTeammates: createAsyncThunk("teammates/receiveTeammates", async(_, thunkApi) => {
@@ -79,5 +80,18 @@ export const asyncHobbiesActions = {
 };
 
 export const asyncSocialnetsActions = {
-
+    receiveAsyncSocialnets: createAsyncThunk("socialnets/receiveSocialnets", async(_, thunkApi) => {
+        try {
+            return await socialnetsService.receiveAll();
+        } catch (error) {
+            return thunkApi.rejectWithValue(error.message);
+        }
+    }),
+    receiveAsyncSocialnetById: createAsyncThunk("socialnets/receiveSocialnet", async({ id }, thunkApi) => {
+        try {
+            return await socialnetsService.receiveById(id);
+        } catch (error) {
+            return thunkApi.rejectWithValue(error.message);
+        }
+    })
 };
