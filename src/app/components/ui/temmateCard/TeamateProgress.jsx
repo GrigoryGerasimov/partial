@@ -18,7 +18,7 @@ const TeamateProgress = ({ HTML, CSS, JScript, React }) => {
 			{Object.entries(technology).map(([key, value]) => (
 				<div
 					key={'technology' + key}
-					className={`flex place-content-between px-2 bg-gradient-to-l from-${colours[key]} gap-1 rounded-r-lg`}
+					className={`flex place-content-between px-2 bg-gradient-to-l form-${colours[key]} gap-1 rounded-r-lg`}
 					style={{ width: `${value}%` }}
 				>
 					<div>{key}</div>
