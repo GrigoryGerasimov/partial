@@ -3,7 +3,7 @@ import TeammateCard from '../ui/temmateCard'
 import Loader from '../common/Loader'
 import { useReceiveTeammatesQuery } from '../../store/api.js'
 
-const TeammatesList = () => {
+const TeammatesListPage = () => {
 	const { isLoading, isSuccess, data } = useReceiveTeammatesQuery()
 
 	return !isLoading && isSuccess ? (
@@ -17,4 +17,4 @@ const TeammatesList = () => {
 	)
 }
 
-export default TeammatesList
+export default TeammatesListPage
