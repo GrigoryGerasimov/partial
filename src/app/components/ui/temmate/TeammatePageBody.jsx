@@ -1,12 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import TeammatePic from '../../TeammateCard/TeammatePic.jsx'
+import TeammatePic from '../temmateCard/TeammatePic.jsx'
 import TeammatePageInfo from './TeammatePageInfo.jsx'
 // import TeammatePageContactsList from "./TeammatePageContactsList.jsx";
 import TeammatePageInterestsBlock from './TeammatePageInterestsBlock.jsx'
 // import TeammatePageWorkingExperience from "./TeammatePageWorkingExperience.jsx";
 import TeammatePageFeedback from './TeammatePageFeedback.jsx'
-import Button from '../../../../components/common/Button'
+import Button from '../../common/Button'
 import PropTypes from 'prop-types'
 
 const TeammatePageBody = ({ data }) => {

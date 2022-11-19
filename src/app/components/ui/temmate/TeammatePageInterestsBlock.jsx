@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-	BigTitle,
-	UnorderedList,
-	ListElement,
-} from '../../../../components/ui/typography'
+import { BigTitle, UnorderedList, ListElement } from '../typography'
 import PropTypes from 'prop-types'
 
 const TeammatePageInterestsBlock = ({ interestsBlockClass, hobbiesList }) => {

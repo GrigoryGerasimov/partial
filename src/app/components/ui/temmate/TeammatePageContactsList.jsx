@@ -1,10 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {
-	BoldText,
-	RegularText,
-	UnorderedList,
-} from '../../../../components/ui/typography'
+import { BoldText, RegularText, UnorderedList } from '../typography'
 import PropTypes from 'prop-types'
 
 const TeammatePageContactsList = ({ contactsListClass, contacts }) => {

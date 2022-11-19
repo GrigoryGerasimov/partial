@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { BigTitle } from './ui/typography'
-import Button from './common/Button'
+import { BigTitle } from '../ui/typography'
+import Button from '../common/Button'
 
 const PageNotFound = () => {
 	const navigate = useNavigate()

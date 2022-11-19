@@ -1,7 +1,7 @@
 import React from 'react'
-import { TableLayout } from '../../../../components/common/tables/TableLayout.jsx'
-import { TableBody } from '../../../../components/common/tables/TableBody.jsx'
-import { TableRow } from '../../../../components/common/tables/TableRow.jsx'
+import { TableLayout } from '../../common/tables/TableLayout.jsx'
+import { TableBody } from '../../common/tables/TableBody.jsx'
+import { TableRow } from '../../common/tables/TableRow.jsx'
 import PropTypes from 'prop-types'
 
 const TeammatePageWorkingExperience = ({ workingExperienceClass, experience }) => {
