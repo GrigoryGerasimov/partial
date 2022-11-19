@@ -12,15 +12,33 @@ import PropTypes from 'prop-types'
 const TeammatePageInfo = ({ infoClass, data }) => {
 	return (
 		<div className={infoClass}>
-			<MainTitle>{`${data.firstName} ${data.lastName}`}</MainTitle>
-			<BigTitle>{data.age}</BigTitle>
-			<BigTitle>{data.position}</BigTitle>
-			<RegularTitle>
-				<BoldText>{data.team}</BoldText>
-			</RegularTitle>
-			<AverageTitle>
-				<QuoteText>{data.intro}</QuoteText>
-			</AverageTitle>
+			<div>
+				Имя: <MainTitle>{`${data.firstName} ${data.lastName}`}</MainTitle>
+				<hr />
+			</div>
+			<div>
+				Возраст:
+				<BigTitle>{data.age}</BigTitle>
+				<hr />
+			</div>
+			<div className='border border-red-700 border-4'>
+				Должность:<BigTitle>{data.position}</BigTitle>BADGE
+				<hr />
+			</div>
+			<div>
+				Команда:
+				<RegularTitle>
+					<BoldText>{data.team}</BoldText>
+				</RegularTitle>
+				<hr />
+			</div>
+			<div>
+				О себе:
+				<AverageTitle>
+					<QuoteText>{data.intro}</QuoteText>
+				</AverageTitle>
+				<hr />
+			</div>
 		</div>
 	)
 }
