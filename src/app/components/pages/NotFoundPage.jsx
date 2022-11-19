@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { BigTitle } from '../ui/typography'
 import Button from '../common/Button'
 
-const PageNotFound = () => {
+const NotFoundPage = () => {
 	const navigate = useNavigate()
 
 	return (
@@ -14,4 +14,4 @@ const PageNotFound = () => {
 	)
 }
 
-export default PageNotFound
+export default NotFoundPage
