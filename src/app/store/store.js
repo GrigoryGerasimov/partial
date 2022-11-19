@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { mockApi } from "./api.js";
+import { configureStore } from '@reduxjs/toolkit'
+import { mockApi } from './api.js'
 // import { teammatesSlice, hobbiesSlice, socialnetsSlice } from "./reducer.js";
 
 // const rootReducer = combineReducers({
@@ -9,8 +9,8 @@ import { mockApi } from "./api.js";
 // });
 
 export const store = configureStore({
-    reducer: {
-        [mockApi.reducerPath]: mockApi.reducer
-    },
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(mockApi.middleware)
-});
+	reducer: {
+		[mockApi.reducerPath]: mockApi.reducer,
+	},
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(mockApi.middleware),
+})

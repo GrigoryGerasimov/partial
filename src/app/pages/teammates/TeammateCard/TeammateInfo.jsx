@@ -1,17 +1,17 @@
-import React from "react";
-import { RegularTitle, AverageTitle } from "../../../components/ui/typography";
-import PropTypes from "prop-types";
+import React from 'react'
+import { RegularTitle, AverageTitle } from '../../../components/ui/typography'
+import PropTypes from 'prop-types'
 
 export const TeammateInfo = ({ infoClass, data }) => {
-    return (
-        <article className={infoClass}>
-            <RegularTitle>{`${data.firstName} ${data.lastName}`}</RegularTitle>
-            <AverageTitle>{data.position}</AverageTitle>
-        </article>
-    );
-};
+	return (
+		<article className={infoClass}>
+			<RegularTitle>{`${data.firstName} ${data.lastName}`}</RegularTitle>
+			<AverageTitle>{data.position}</AverageTitle>
+		</article>
+	)
+}
 
 TeammateInfo.propTypes = {
-    infoClass: PropTypes.string,
-    data: PropTypes.object
-};
+	infoClass: PropTypes.string,
+	data: PropTypes.object,
+}

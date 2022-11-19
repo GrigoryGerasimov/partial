@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-*, * + * {
-    padding: 0;
-    margin: 0;
-    font-family: Bahnschrift, sans-serif;
-    box-sizing: border-box;
+*,
+* + * {
+	padding: 0;
+	margin: 0;
+	font-family: Bahnschrift, sans-serif;
+	box-sizing: border-box;
 }
 
 body {
-    width: 100vw;
-    max-width: 100%;
-    color: rgba(120, 67, 31, 0.85);
-    background-color: rgba(254, 213, 131, 0.1);
+	width: 100vw;
+	max-width: 100%;
+	color: rgba(120, 67, 31, 0.85);
+	background-color: rgba(254, 213, 131, 0.1);
 }
