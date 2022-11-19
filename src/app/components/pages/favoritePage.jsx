@@ -4,6 +4,7 @@ import { useReceiveTeammatesQuery } from '../../store/api'
 import Button from '../common/Button'
 import favoriteService from '../../services/favoriteService'
 import ComponentTitle from '../common/componentTitle'
+import ComponentContainer from '../common/componentContainer'
 
 const FavoritePage = () => {
 	const { data } = useReceiveTeammatesQuery()
@@ -34,23 +35,25 @@ const FavoritePage = () => {
 	}
 
 	return (
-		<>
+		<ComponentContainer>
 			<ComponentTitle title='Favorite Teammates' />
-			<section className='grid grid-cols-3 grid-rows-2 gap-y-10 gap-x-16 justify-center items-baseline w-full h-full p-12'>
+			<div className='flex flex-wrap justify-around'>
 				{renderData && renderData.length !== 0 ? (
 					renderData.map((t) => (
-						<div key={t._id} className='flex flex-col'>
+						<div key={t._id} className='w-1/3 flex flex-col px-2 justify-around'>
 							<TeammateCard data={t} />
-							<Button onClick={() => handleRemoveFavoriteOnPage(t._id)}>
-								Remove from favorites
-							</Button>
+							<div>
+								<Button onClick={() => handleRemoveFavoriteOnPage(t._id)}>
+									Remove from favorites
+								</Button>
+							</div>
 						</div>
 					))
 				) : (
 					<div>Now is List Empty</div>
 				)}
-			</section>
-		</>
+			</div>
+		</ComponentContainer>
 	)
 }
 

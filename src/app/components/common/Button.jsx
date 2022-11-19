@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const Button = ({ children, ...rest }) => {
 	return (
 		<button
-			className='inline-block border-none outline-none appearance-none w-full p-4 px-10 bg-red-100 bg-opacity-60 text-yellow-900 text-opacity-80 rounded mb-4 m-auto cursor-pointer transition-all hover:bg-red-400 hover:bg-opacity-95 hover:text-white hover:text-opacity-95'
+			className='inline-block w-[100%] p-3 bg-indigo-500 rounded-md text-slate-50 border-2 border-slate-50 transition duration-400 hover:text-indigo-500 hover:bg-slate-50 hover:border-indigo-500'
 			{...rest}
 		>
 			{children}
