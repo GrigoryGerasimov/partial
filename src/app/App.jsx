@@ -4,6 +4,8 @@ import { useRoutes } from 'react-router-dom'
 import { routes } from './routes.jsx'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+
+import BreadcrumbsLayout from './components/ui/breadcrumbs/BreadcrumbsLayout'
 import favoriteService from './services/favoriteService'
 import Background from './components/ui/background'
 
@@ -15,7 +17,7 @@ const App = () => {
 		<div className='isolate bg-white '>
 			<Background />
 			<Header />
-			{useRoutes(routes)}
+			<BreadcrumbsLayout>{useRoutes(routes)}</BreadcrumbsLayout>
 			<ToastContainer />
 		</div>
 	)
