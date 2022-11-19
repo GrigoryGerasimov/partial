@@ -4,6 +4,7 @@ import { ContainerWrapper } from '../common/ContainerWrapper.jsx'
 import TeammatePageBody from '../ui/temmate/TeammatePageBody.jsx'
 import { useReceiveTeammatesByIdQuery } from '../../store/api.js'
 import Loader from '../common/Loader'
+import ComponentTitle from '../common/componentTitle.jsx'
 
 const TeammatePage = () => {
 	const { mateId } = useParams()
@@ -11,7 +12,14 @@ const TeammatePage = () => {
 
 	return (
 		<ContainerWrapper wrapperClass='max-w-full my-0 mx-auto'>
-			{!isLoading && isSuccess ? <TeammatePageBody data={teammate} /> : <Loader />}
+			{!isLoading && isSuccess ? (
+				<>
+					<ComponentTitle title={`${teammate.firstName} ${teammate.lastName}`} />
+					<TeammatePageBody data={teammate} />
+				</>
+			) : (
+				<Loader />
+			)}
 		</ContainerWrapper>
 	)
 }

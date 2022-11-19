@@ -6,14 +6,14 @@ const AuthLinks = () => {
 		<div>
 			<NavLink
 				to='auth/login'
-				className='inline-block my-2.5 mx-2 no-underline text-yellow-900 text-opacity-80 transition-transform hover:scale-125'
+				className='inline-block my-2.5 mr-6 transition duration-400 hover:text-indigo-500'
 			>
 				Log In
 			</NavLink>
 
 			<NavLink
 				to='auth/signup'
-				className='inline-block my-2.5 mx-2 no-underline text-yellow-900 text-opacity-80 transition-transform hover:scale-125'
+				className='inline-block p-3 bg-indigo-500 rounded-md text-slate-50 border-2 border-slate-50 transition duration-400 hover:text-indigo-500 hover:bg-slate-50 hover:border-indigo-500'
 			>
 				Sing Up
 			</NavLink>
