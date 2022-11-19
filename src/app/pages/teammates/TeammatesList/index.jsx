@@ -1,16 +1,14 @@
 import React from "react";
 import TeammateCard from "../TeammateCard";
-import { useSelector } from "react-redux";
-import { receiveAllTeammates } from "../../../store/selectors";
 import Loader from "../../../components/common/Loader";
-import styles from "./index.module.scss";
+import { useReceiveTeammatesQuery } from "../../../store/api.js";
 
 const TeammatesList = () => {
-    const mates = useSelector(receiveAllTeammates());
+    const { isLoading, isSuccess, data } = useReceiveTeammatesQuery();
 
-    return mates ? (
-        <section className={styles.teammateslist_container}>
-            {mates.map(mate => <TeammateCard key={mate.id} data={mate}/>)}
+    return !isLoading && isSuccess ? (
+        <section className="grid grid-cols-3 grid-rows-2 gap-y-10 gap-x-16 justify-center items-baseline w-full h-full p-12">
+            {data.map(teammate => <TeammateCard key={teammate.id} data={teammate}/>)}
         </section>
     ) : <Loader/>;
 };

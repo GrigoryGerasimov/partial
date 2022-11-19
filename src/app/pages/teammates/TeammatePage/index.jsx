@@ -1,21 +1,19 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { receiveTeammateById } from "../../../store/selectors.js";
 import { ContainerWrapper } from "../../../components/common/ContainerWrapper.jsx";
 import TeammatePageBody from "./pageComponents/TeammatePageBody.jsx";
+import { useReceiveTeammatesByIdQuery } from "../../../store/api.js";
 import Loader from "../../../components/common/Loader";
-import styles from "./index.module.scss";
 
 const TeammatePage = () => {
     const { mateId } = useParams();
-    const teammate = useSelector(receiveTeammateById(mateId));
+    const { isLoading, isSuccess, data: teammate } = useReceiveTeammatesByIdQuery(mateId);
 
     return (
         <ContainerWrapper
-            wrapperClass={styles.teammate_page__container}
+            wrapperClass="max-w-full my-0 mx-auto"
         >
-            {teammate ? <TeammatePageBody data={teammate}/> : <Loader/>}
+            {!isLoading && isSuccess ? <TeammatePageBody data={teammate}/> : <Loader/>}
         </ContainerWrapper>
     );
 };

@@ -2,13 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { UnorderedList } from "../../typography";
 import { navlinks } from "./navlinks.js";
-import PropTypes from "prop-types";
 
-const NavBar = ({ navbarClass, navlinkClass }) => {
+const NavBar = () => {
     return (
-        <UnorderedList listClass={navbarClass}>
+        <UnorderedList listClass="sm:flex sm:flex-wrap sm:flex-col sm:content-center md:flex md:flex-row md:justify-center">
             {navlinks.map(({ id, key, pathTo, label }) => (
-                <NavLink key={`${id}_${key}`} to={pathTo} className={navlinkClass}>
+                <NavLink key={`${id}_${key}`} to={pathTo} className="inline-block my-2.5 mx-7 no-underline text-yellow-900 text-opacity-80 transition-transform hover:scale-125">
                     {label}
                 </NavLink>
             ))}
@@ -17,8 +16,3 @@ const NavBar = ({ navbarClass, navlinkClass }) => {
 };
 
 export default NavBar;
-
-NavBar.propTypes = {
-    navbarClass: PropTypes.string,
-    navlinkClass: PropTypes.string
-};

@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext, useMemo, useCallback } from "react";
-import { validationConfig } from "../pages/teammates/TeammatePage/validationConfig.js";
-import { validate } from "../utils/validation/validate.js";
+import React, { useState, useContext, useMemo, useCallback } from "react";
+// import { validationConfig } from "../pages/teammates/TeammatePage/validationConfig.js";
 import PropTypes from "prop-types";
 
 const FormContext = React.createContext();
@@ -9,18 +8,18 @@ export const useForm = () => useContext(FormContext);
 
 export const FormProvider = ({ children }) => {
     const [formData, setFormData] = useState({});
-    const [errors, setErrors] = useState({});
+    const [errors] = useState({});
 
-    const checkValidation = useCallback((data, config) => {
-        const error = validate(data, config);
-        setErrors(error);
-    }, [formData, validationConfig]);
+    // const checkValidation = useCallback((data, config) => {
+    //     const error = validate(data, config);
+    //     setErrors(error);
+    // }, [formData, validationConfig]);
 
-    useEffect(() => {
-        if (Object.keys(formData)) {
-            checkValidation(formData, validationConfig);
-        }
-    }, [checkValidation]);
+    // useEffect(() => {
+    //     if (Object.keys(formData)) {
+    //         checkValidation(formData, validationConfig);
+    //     }
+    // }, [checkValidation]);
 
     const handleChange = useCallback(({ target }) => {
         const { name, value } = target;

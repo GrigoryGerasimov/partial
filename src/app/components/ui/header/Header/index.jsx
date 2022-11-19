@@ -1,13 +1,12 @@
 import React from "react";
 import NavBar from "../NavBar";
 import NavLogo from "../NavLogo";
-import styles from "../index.module.scss";
 
 const Header = () => {
     return (
-        <header className={styles.header_container}>
-            <NavLogo logoClass={styles.navlogo}/>
-            <NavBar navbarClass={styles.navlink_list} navlinkClass={styles.navlink_list__list_item}/>
+        <header className="sm:flex sm:flex-wrap sm:flex-col sm:content-center md:flex md:flex-row md:justify-start md:py-5 md:px-11 md:w-full md:bg-red-100 md:bg-opacity-60 md:text-yellow-900 md:text-opacity-80">
+            <NavLogo label="T.E.A.M"/>
+            <NavBar/>
         </header>
     );
 };
