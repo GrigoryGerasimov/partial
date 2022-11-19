@@ -1,21 +1,35 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { UnorderedList } from '../../typography'
-import { navlinks } from './navlinks.js'
+import AuthLinks from '../authLinks'
 
 const NavBar = () => {
 	return (
-		<UnorderedList listClass='sm:flex sm:flex-wrap sm:flex-col sm:content-center md:flex md:flex-row md:justify-center'>
-			{navlinks.map(({ id, key, pathTo, label }) => (
+		<>
+			<UnorderedList listClass='sm:flex sm:flex-wrap sm:flex-col sm:content-center md:flex md:flex-row md:justify-center'>
 				<NavLink
-					key={`${id}_${key}`}
-					to={pathTo}
+					to=''
 					className='inline-block my-2.5 mx-7 no-underline text-yellow-900 text-opacity-80 transition-transform hover:scale-125'
 				>
-					{label}
+					Главная
 				</NavLink>
-			))}
-		</UnorderedList>
+
+				<NavLink
+					to='/teammates'
+					className='inline-block my-2.5 mx-7 no-underline text-yellow-900 text-opacity-80 transition-transform hover:scale-125'
+				>
+					Наша команда
+				</NavLink>
+
+				<NavLink
+					to='/favorite'
+					className='inline-block my-2.5 mx-7 no-underline text-yellow-900 text-opacity-80 transition-transform hover:scale-125'
+				>
+					Favorite
+				</NavLink>
+			</UnorderedList>
+			<AuthLinks />
+		</>
 	)
 }
 
