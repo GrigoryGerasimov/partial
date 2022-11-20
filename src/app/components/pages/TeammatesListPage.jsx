@@ -3,22 +3,22 @@ import TeammateCard from '../ui/teammateCard'
 import Loader from '../common/Loader'
 import { useReceiveTeammatesQuery } from '../../store/api.js'
 import ComponentTitle from '../common/Title'
-import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { add } from '../../store/favouriteSlice.js'
+// import { useNavigate } from 'react-router-dom'
+// import { useDispatch } from 'react-redux'
+// import { add } from '../../store/favouriteSlice.js'
 import Button from '../common/Button.jsx'
 
 const TeammatesListPage = () => {
-	const dispatch = useDispatch()
-	const navigate = useNavigate()
+	// const dispatch = useDispatch()
+	// const navigate = useNavigate()
 	const { isLoading, isSuccess, data } = useReceiveTeammatesQuery({
 		refetchOnFocus: true,
 	})
-	const { addFavourite } = favouriteService
+	// const { addFavourite } = favouriteService
 
-	const handleAddFavourite = (id) => {
-		dispatch(add(id))
-	}
+	// const handleAddFavourite = (id) => {
+	// 	dispatch(add(id))
+	// }
 
 	return !isLoading && isSuccess ? (
 		<>
@@ -31,7 +31,8 @@ const TeammatesListPage = () => {
 
 							<div className='flex justify-around px-2 mb-5'>
 								<div>
-									<Button onClick={() => handleFavourite(d.id)}>{'В избранное'}</Button>
+									<Button>{'В избранное'}</Button>
+									{/* <Button onClick={() => handleFavourite(d.id)}>{'В избранное'}</Button> */}
 								</div>
 							</div>
 						</div>
