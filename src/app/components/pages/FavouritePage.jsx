@@ -15,9 +15,11 @@ const FavouritePage = () => {
 		refetchOnFocus: true,
 	})
 	const navigate = useNavigate()
-	const [favourite, setFavourite] = useState(useSelector(state => state.favourites.entities))
+	const [favourite, setFavourite] = useState(
+		useSelector((state) => state.favourites.entities),
+	)
 	const [renderData, setRenderData] = useState()
-	const isFavouriteLoading = useSelector(state => state.favourites.isLoading)
+	const isFavouriteLoading = useSelector((state) => state.favourites.isLoading)
 
 	useEffect(() => {
 		dispatch(get())
@@ -48,33 +50,37 @@ const FavouritePage = () => {
 
 	return (
 		<ComponentContainer>
-			<ComponentTitle title='Favourite Teammates' />
+			<ComponentTitle title='Избранные товарищи' />
 			<div className='flex flex-wrap justify-around'>
-				{!isFavouriteLoading ? renderData && renderData.length !== 0 ? (
-					renderData.map((t) => (
-						<div key={t._id} className='w-1/3 flex px-2 justify-around'>
-							<div className='flex flex-col justify-between max-w-[310px] mb-10 bg-slate-50 transition duration-400 hover:shadow-lg hover:shadow-indigo-200 rounded-xl'>
-								<TeammateCard data={t} />
+				{!isFavouriteLoading ? (
+					renderData && renderData.length !== 0 ? (
+						renderData.map((t) => (
+							<div key={t._id} className='w-1/3 flex px-2 justify-around'>
+								<div className='flex flex-col justify-between max-w-[310px] mb-10 bg-slate-50 transition duration-400 hover:shadow-lg hover:shadow-indigo-200 rounded-xl'>
+									<TeammateCard data={t} />
 
-								<div className='flex justify-around px-2 mb-5'>
-									<div className='w-2/5'>
-										<Button onClick={() => navigate(`/teammates/${t.id}`)}>
-											Открыть
-										</Button>
-									</div>
+									<div className='flex justify-around px-2 mb-5'>
+										<div className='w-2/5'>
+											<Button onClick={() => navigate(`/teammates/${t.id}`)}>
+												Открыть
+											</Button>
+										</div>
 
-									<div className='w-2/5'>
-										<Button onClick={() => handleRemoveFavouriteOnPage(t.id)}>
-											Remove
-										</Button>
+										<div className='w-2/5'>
+											<Button onClick={() => handleRemoveFavouriteOnPage(t.id)}>
+												Remove
+											</Button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					))
+						))
+					) : (
+						<div>Now is List Empty</div>
+					)
 				) : (
-					<div>Now is List Empty</div>
-				) : <Loader/>}
+					<Loader />
+				)}
 			</div>
 		</ComponentContainer>
 	)
