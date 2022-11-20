@@ -6,8 +6,6 @@ import TeammatePageContactsList from './TeammatePageContactsList.jsx'
 import TeammatePageInterestsBlock from './TeammatePageInterestsBlock.jsx'
 import Button from '../../common/Button'
 import TeamateProgress from './TeamatePageProgress.jsx'
-import { BoldText, ListElement, UnorderedList } from '../typography'
-
 import PropTypes from 'prop-types'
 import favouriteService from '../../../services/favouriteService.js'
 
@@ -20,32 +18,25 @@ const TeammatePageBody = ({ data }) => {
 	}
 
 	return (
-		data && (
-			<div className='flex flex-col mt-5'>
-				<div className='flex flex-row gap-5 flex-wrap justify-center '>
-					<div className='lg:w-1/2 md:w-1/2 sm:w-full'>
-						<div>
-							<TeammatePic
-								imgClass='block max-w-full mb-11 w-80 rounded-lg'
-								imgPath={data.imgPath}
-							/>
-							<div className='border border-red-700 border-4'>BOOKMARK</div>
-							<BoldText>Задачи на проекте:</BoldText>
-							<UnorderedList>
-								{data.tasks.map((task) => (
-									<ListElement key={task.length}>{task}</ListElement>
-								))}
-							</UnorderedList>
-						</div>
-					</div>
-					<div className='lg:w-1/3 md:w-1/3 sm:w-full'>
-						<div>
-							<TeammatePageInfo infoClass='flex flex-col gap-2 mb-11' data={data} />
-							<TeammatePageInterestsBlock
-								interestsBlockClass='mb-11'
-								hobbiesList={data.hobbies}
-							/>
-							<div>
+		<div className='pt-20 mb-10 relative'>
+			<div className='w-1/5 absolute top-0 left-0'>
+				<Button onClick={() => navigate(-1)}>К команде разработки</Button>
+			</div>
+			<div className='w-1/5 absolute top-0 right-0'>
+				<Button onClick={() => handleAddFavourite(data.id)}>Избранное</Button>
+			</div>
+			<div className='flex mb-10 mx-[-16px]'>
+				<div className='w-[50%] px-4'>
+					<div className='flex flex-col h-[100%] justify-between'>
+						<TeammatePic
+							imgClass='block rounded-lg object-cover'
+							imgPath={data.imgPath}
+						/>
+
+						<TeammatePageContactsList contacts={data.contacts} />
+
+						<div className='flex justify-around'>
+							<div className='w-[385px]'>
 								<TeamateProgress
 									HTML={Number(data.technologies.html)}
 									CSS={Number(data.technologies.css)}
@@ -56,19 +47,13 @@ const TeammatePageBody = ({ data }) => {
 						</div>
 					</div>
 				</div>
-
-				<div>
-					<div className='border border-red-700 border-4'>PORTFOLIO: </div>
-					<div className='flex justify-around mt-10 flex-wrap'>
-						<TeammatePageContactsList
-							contactsListClass='mb-11'
-							contacts={data.contacts}
-						/>
-						<TeammatePageFeedback feedbackClass='mb-11' />
-						<div className='self-center'>
-							<Button onClick={() => navigate(-1)}>К команде разработки</Button>
-						</div>
+				<div className='flex w-[50%] px-4 justify-around'>
+					<div className='w-[90%] '>
+						<TeammatePageInfo infoClass='flex flex-col gap-2' data={data} />
 					</div>
+				</div>
+			</div>
+
 			<div className='flex'>
 				<div className='w-[50%] px-4'>
 					<span className='block mb-4 text-3xl font-bold'>Задачи на проекте:</span>
@@ -88,7 +73,7 @@ const TeammatePageBody = ({ data }) => {
 					/>
 				</div>
 			</div>
-		)
+		</div>
 	)
 }
 
