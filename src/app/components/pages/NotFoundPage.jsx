@@ -7,10 +7,17 @@ const NotFoundPage = () => {
 	const navigate = useNavigate()
 
 	return (
+
 		<>
-			<BigTitle>Oops! Page not found :(</BigTitle>
-			<Button onClick={() => navigate('/', { replace: true })}>Back to Main Page</Button>
+			<BigTitle>Oops! Page not found!</BigTitle>
+			<Button
+				func={() => navigate('/', { replace: true })}
+				color='indigo-500'
+				name='Вернуться назад'
+				isRounded={true}
+			/>
 		</>
+
 	)
 }
 
