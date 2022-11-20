@@ -2,6 +2,7 @@
 	"name": "team-spa",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://GrigoryGerasimov.github.io/partial/",
 	"dependencies": {
 		"@heroicons/react": "^1.0.6",
 		"@reduxjs/toolkit": "^1.9.0",
@@ -27,7 +28,8 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"format": "npx prettier --write ."
+		"format": "npx prettier --write .",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -55,6 +57,7 @@
 		"eslint-plugin-n": "^15.5.1",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.31.10",
+		"gh-pages": "^4.0.0",
 		"postcss": "^8.4.19",
 		"prettier": "2.7.1",
 		"tailwindcss": "^3.2.4"

@@ -7,7 +7,7 @@ import TeammatePage from './components/pages/TeammatePage'
 import FavouritePage from './components/pages/FavouritePage.jsx'
 
 export const routes = [
-	{ path: '', element: <Navigate to='teammates' /> },
+	{ path: '/partial', element: <Navigate to='/teammates' /> },
 
 	{
 		path: 'teammates',
@@ -15,7 +15,7 @@ export const routes = [
 		children: [
 			{ path: '', element: <TeammatesListPage /> },
 			{ path: ':mateId', element: <TeammatePage /> },
-			{ path: '*', element: <Navigate to='' /> },
+			{ path: '*', element: <Navigate to='/partial' /> },
 		],
 	},
 	{

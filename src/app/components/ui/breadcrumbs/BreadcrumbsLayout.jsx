@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { useReceiveTeammatesQuery } from '../../../store/api'
+import Loader from '../../common/Loader.jsx'
 
 const BreadcrumbsLayout = () => {
 	const { isLoading, data } = useReceiveTeammatesQuery({
@@ -20,7 +21,7 @@ const BreadcrumbsLayout = () => {
 	}
 
 	return (
-		!isLoading && (
+		!isLoading && data ? (
 			<>
 				<h1>
 					{location.pathname.split('/').length > 2
@@ -28,7 +29,7 @@ const BreadcrumbsLayout = () => {
 						: routeNames[location.pathname]}
 				</h1>
 			</>
-		)
+		) : <Loader/>
 	)
 }
 

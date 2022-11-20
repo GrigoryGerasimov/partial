@@ -10,7 +10,7 @@ const NotFoundPage = () => {
 		<>
 			<BigTitle>Oops! Page not found!</BigTitle>
 			<Button
-				func={() => navigate('/', { replace: true })}
+				func={() => navigate('/partial', { replace: true })}
 				color='indigo-500'
 				isRounded={true}
 			>
