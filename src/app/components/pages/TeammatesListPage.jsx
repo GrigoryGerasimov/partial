@@ -1,12 +1,13 @@
 import React from 'react'
 import TeammateCard from '../ui/teammateCard'
-import Loader from '../common/Loader'
 import { useReceiveTeammatesQuery } from '../../store/api.js'
 import ComponentTitle from '../common/Title'
 import { useDispatch } from 'react-redux'
 import { add } from '../../store/favouriteSlice.js'
 import Button from '../common/Button.jsx'
+
 import { useNavigate } from 'react-router-dom'
+
 
 const TeammatesListPage = () => {
 	const dispatch = useDispatch()
@@ -19,10 +20,11 @@ const TeammatesListPage = () => {
 		dispatch(add(id))
 	}
 
-	return !isLoading && isSuccess ? (
+	return (
 		<>
 			<ComponentTitle title='Наша команда' />
 			<div className='flex flex-wrap justify-around'>
+
 				{data.map((d) => (
 					<div key={d.id} className='flex px-2 justify-around'>
 						<div className='flex flex-col justify-between max-w-[310px] mb-10 bg-slate-50 transition duration-400 hover:shadow-lg hover:shadow-indigo-200 rounded-xl'>
@@ -47,15 +49,17 @@ const TeammatesListPage = () => {
 									>
 										Избранное
 									</Button>
+
 								</div>
 							</div>
-						</div>
-					</div>
-				))}
+					  ))
+					: [' ', ' ', ' ', ' '].map((item, i) => (
+							<div key={'loaderCard' + i} className='flex px-2 justify-around'>
+								<TeammateCardLoader />
+							</div>
+					  ))}
 			</div>
 		</>
-	) : (
-		<Loader />
 	)
 }
 
