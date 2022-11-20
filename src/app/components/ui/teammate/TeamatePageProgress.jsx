@@ -10,7 +10,7 @@ const TeamateProgress = ({ HTML, CSS, JScript, React }) => {
 	}
 
 	return (
-		<div className='flex flex-col max-w-sm h-100 gap-1 bg-stone-800 p-2 text-white rounded-md'>
+		<div className='flex flex-col max-w-full basis-96 h-100 gap-1 bg-stone-800 p-2 text-white rounded-md'>
 			<h2>Знание технологий</h2>
 			{Object.entries(technology).map(([key, value]) => (
 				<div
