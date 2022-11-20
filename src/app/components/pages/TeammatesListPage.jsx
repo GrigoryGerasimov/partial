@@ -7,7 +7,7 @@ import { add } from '../../store/favouriteSlice.js'
 import Button from '../common/Button.jsx'
 
 import { useNavigate } from 'react-router-dom'
-
+import TeammateCardLoader from '../ui/TeammateCardLoader'
 
 const TeammatesListPage = () => {
 	const dispatch = useDispatch()
@@ -25,7 +25,7 @@ const TeammatesListPage = () => {
 			<ComponentTitle title='Наша команда' />
 			<div className='flex flex-wrap justify-around'>
 
-				{data.map((d) => (
+				{!isLoading && isSuccess ? data.map((d) => (
 					<div key={d.id} className='flex px-2 justify-around'>
 						<div className='flex flex-col justify-between max-w-[310px] mb-10 bg-slate-50 transition duration-400 hover:shadow-lg hover:shadow-indigo-200 rounded-xl'>
 							<TeammateCard data={d} />
@@ -52,6 +52,8 @@ const TeammatesListPage = () => {
 
 								</div>
 							</div>
+						</div>
+					</div>
 					  ))
 					: [' ', ' ', ' ', ' '].map((item, i) => (
 							<div key={'loaderCard' + i} className='flex px-2 justify-around'>
