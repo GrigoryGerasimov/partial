@@ -19,13 +19,11 @@ const TeammatePageBody = ({ data }) => {
 
 	return (
 		<div className='pt-20 mb-10 relative'>
-
 			<div className='absolute top-0 left-0'>
 				<Button onClick={() => navigate(-1)}>К команде разработки</Button>
 			</div>
 			<div className='absolute top-0 right-0'>
 				<Button onClick={() => handleAddFavourite(data.id)}>Избранное</Button>
-
 			</div>
 			<div className='flex mb-10 mx-[-16px] flex-wrap align-center justify-center gap-4'>
 				<div className='max-w-xl px-4'>
@@ -37,15 +35,13 @@ const TeammatePageBody = ({ data }) => {
 
 						<TeammatePageContactsList contacts={data.contacts} />
 
-						<div className='flex justify-around'>
-							<div className='w-[385px]'>
-								<TeamateProgress
-									HTML={Number(data.technologies.html)}
-									CSS={Number(data.technologies.css)}
-									JScript={Number(data.technologies.js)}
-									React={Number(data.technologies.react)}
-								/>
-							</div>
+						<div className='flex'>
+							<TeamateProgress
+								HTML={Number(data.technologies.html)}
+								CSS={Number(data.technologies.css)}
+								JScript={Number(data.technologies.js)}
+								React={Number(data.technologies.react)}
+							/>
 						</div>
 					</div>
 				</div>
