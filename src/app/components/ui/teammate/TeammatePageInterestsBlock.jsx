@@ -1,5 +1,5 @@
 import React from 'react'
-import { BigTitle, UnorderedList, ListElement } from '../typography'
+import { UnorderedList, ListElement } from '../typography'
 import { useReceiveHobbiesQuery } from '../../../store/api.js'
 import Loader from '../../common/Loader.jsx'
 import PropTypes from 'prop-types'
@@ -11,19 +11,29 @@ const TeammatePageInterestsBlock = ({ interestsBlockClass, hobbiesList }) => {
 
 	return !isLoading && isSuccess ? (
 		<article className={interestsBlockClass}>
-			<BigTitle>Мои увлечения: </BigTitle>
-			<UnorderedList>
+			<span className='block mb-4 text-3xl font-bold'>Мои увлечения</span>
+			<UnorderedList listClass={'text-xl capitalize'}>
 				{hobbiesList.map((hobby) => {
 					for (const dataItem of data) {
 						if (hobby === dataItem._id) {
-							return <ListElement key={dataItem._id}>{dataItem.label}</ListElement>
+							return (
+								<ListElement key={dataItem._id} classList={'mb-2'}>
+									{dataItem.label}
+								</ListElement>
+							)
 						}
 					}
-					return <ListElement key={hobby}>{hobby}</ListElement>
+					return (
+						<ListElement classList={'mb-2'} key={hobby}>
+							{hobby}
+						</ListElement>
+					)
 				})}
 			</UnorderedList>
 		</article>
-	) : <Loader/>
+	) : (
+		<Loader />
+	)
 }
 
 export default TeammatePageInterestsBlock
