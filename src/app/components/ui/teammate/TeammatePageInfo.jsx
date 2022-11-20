@@ -1,6 +1,6 @@
 import React from 'react'
-import { Badge } from '../../common/Badge.jsx'
 import PropTypes from 'prop-types'
+import { Badge } from '../../common/Badge'
 
 const TeammatePageInfo = ({ infoClass, data }) => {
 	return (
@@ -15,8 +15,7 @@ const TeammatePageInfo = ({ infoClass, data }) => {
 			</div>
 			<div className='mb-2 p-2 border rounded-lg shadow-md text-center'>
 				<span className='block mb-2 text-3xl font-bold'>Должность:</span>
-				<span className='block text-2xl'>{data.position}</span>
-				{data.role === 'teamlead' && <Badge color='red' label='TL' />}
+				<Badge data={data} />
 			</div>
 			<div className='mb-2 p-2 border rounded-lg shadow-md text-center'>
 				<span className='block mb-2 text-3xl font-bold'>Команда:</span>

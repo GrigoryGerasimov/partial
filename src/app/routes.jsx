@@ -4,35 +4,11 @@ import NotFoundPage from './components/pages/NotFoundPage.jsx'
 import TeammatesLayout from './layouts/TeammatesLayout'
 import TeammatesListPage from './components/pages/TeammatesListPage'
 import TeammatePage from './components/pages/TeammatePage'
-import LoginPage from './components/pages/LoginPage'
-import SingupPage from './components/pages/SingupPage'
-import AuthLayout from './layouts/AuthLayout.jsx'
 import FavouritePage from './components/pages/FavouritePage.jsx'
 
 export const routes = [
 	{ path: '', element: <Navigate to='teammates' /> },
-	{
-		path: 'auth',
-		element: <AuthLayout />,
-		children: [
-			{
-				path: '',
-				element: <Navigate to='/auth/signUp' />,
-			},
-			{
-				path: 'login',
-				element: <LoginPage />,
-			},
-			{
-				path: 'signup',
-				element: <SingupPage />,
-			},
-			{
-				path: '*',
-				element: <Navigate to='/auth/signUp' />,
-			},
-		],
-	},
+
 	{
 		path: 'teammates',
 		element: <TeammatesLayout />,
