@@ -1,20 +1,34 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useLocation } from 'react-router-dom'
+import { useReceiveTeammatesQuery } from '../../../store/api'
 
-const BreadcrumbsLayout = ({ children }) => {
+const BreadcrumbsLayout = () => {
+	const { data } = useReceiveTeammatesQuery({
+		refetchOnFocus: true,
+	})
 	const location = useLocation()
-	console.log(location)
+
+	const getNameById = (id) => {
+		return `${data.find((u) => u.id === id).firstName} ${
+			data.find((u) => u.id === id).lastName
+		}`
+	}
+	const routeNames = {
+		'/': '/Наша команда',
+		'/teammates': '/Наша команда',
+		'/favourite': '/Избранное',
+	}
+
+
 	return (
 		<>
-			<h1>{location.pathname}</h1>
-			{children}
+			<h1>
+				{location.pathname.split('/').length > 2
+					? `/Наша команда/${getNameById(location.pathname.split('/')[2])}`
+					: routeNames[location.pathname]}
+			</h1>
 		</>
 	)
-}
-
-BreadcrumbsLayout.propTypes = {
-	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 }
 
 export default BreadcrumbsLayout

@@ -5,7 +5,12 @@ import TeammatePageInfo from './TeammatePageInfo.jsx'
 import TeammatePageContactsList from './TeammatePageContactsList.jsx'
 import TeammatePageInterestsBlock from './TeammatePageInterestsBlock.jsx'
 import Button from '../../common/Button'
+
 import TeamateProgress from '../teammateCard/TeamateProgress.jsx'
+
+import TeamateProgress from './TeamatePageProgress.jsx'
+import { BoldText, ListElement, UnorderedList } from '../typography'
+
 import PropTypes from 'prop-types'
 import favouriteService from '../../../services/favouriteService.js'
 
@@ -16,6 +21,7 @@ const TeammatePageBody = ({ data }) => {
 		// fix ???
 		favouriteService.addFavourite(id)
 	}
+
 	return (
 		<div className='pt-20 mb-10 relative'>
 			<div className='w-1/5 absolute top-0 left-0'>
@@ -44,6 +50,13 @@ const TeammatePageBody = ({ data }) => {
 								/>
 							</div>
 						</div>
+						<div className='border border-red-700 border-4'>BOOKMARK</div>
+						<BoldText>Задачи на проекте:</BoldText>
+						<UnorderedList>
+							{data.tasks.map((task) => (
+								<ListElement key={task.length}>{task}</ListElement>
+							))}
+						</UnorderedList>
 					</div>
 				</div>
 				<div className='flex w-[50%] px-4 justify-around'>
