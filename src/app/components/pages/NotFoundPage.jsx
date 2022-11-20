@@ -7,6 +7,7 @@ const NotFoundPage = () => {
 	const navigate = useNavigate()
 
 	return (
+
 		<>
 			<BigTitle>Oops! Page not found!</BigTitle>
 			<Button
@@ -16,6 +17,7 @@ const NotFoundPage = () => {
 				isRounded={true}
 			/>
 		</>
+
 	)
 }
 
