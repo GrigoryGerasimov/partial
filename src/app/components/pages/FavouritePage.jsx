@@ -61,7 +61,6 @@ const FavouritePage = () => {
 
 									<div className='flex justify-around px-2 mb-5'>
 										<div className='w-2/5'>
-
 											<Button
 												func={() => navigate(`/teammates/${t.id}`)}
 												color='indigo-500'
@@ -74,19 +73,17 @@ const FavouritePage = () => {
 											<Button
 												func={() => handleRemoveFavouriteOnPage(t.id)}
 												color='indigo-500'
-												name='Удалить'
 												isRounded={true}
-											/>
-
+											>
+												Удалить
+											</Button>
 										</div>
 									</div>
 								</div>
 							</div>
 						))
 					) : (
-
 						<div>В данный момент в избранном ничего нет.</div>
-
 					)
 				) : (
 					<Loader />

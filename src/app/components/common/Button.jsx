@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = ({ color, func, name, type, isRounded }) => {
+const Button = ({ color, func, type, isRounded, children }) => {
 	return (
 		<button
 			className={`inline-block w-[100%] p-3 bg-${color} ${
@@ -10,7 +10,7 @@ const Button = ({ color, func, name, type, isRounded }) => {
 			onClick={func}
 			type={type}
 		>
-			{name}
+			{children}
 		</button>
 	)
 }
@@ -23,4 +23,5 @@ Button.propTypes = {
 	name: PropTypes.string,
 	isRounded: PropTypes.bool,
 	type: PropTypes.string,
+	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 }
