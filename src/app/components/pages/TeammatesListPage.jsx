@@ -14,6 +14,7 @@ const TeammatesListPage = () => {
 	const { isLoading, isSuccess, data } = useReceiveTeammatesQuery({
 		refetchOnFocus: true,
 	})
+	const { addFavourite } = favouriteService
 
 	const handleAddFavourite = (id) => {
 		dispatch(add(id))
@@ -24,17 +25,13 @@ const TeammatesListPage = () => {
 			<ComponentTitle title='Наша команда' />
 			<div className='flex flex-wrap justify-around'>
 				{data.map((d) => (
-					<div key={d.id} className='w-1/3 flex px-2 justify-around'>
+					<div key={d.id} className='flex px-2 justify-around'>
 						<div className='flex flex-col justify-between max-w-[310px] mb-10 bg-slate-50 transition duration-400 hover:shadow-lg hover:shadow-indigo-200 rounded-xl'>
 							<TeammateCard data={d} />
 
 							<div className='flex justify-around px-2 mb-5'>
-								<div className='w-2/5'>
-									<Button onClick={() => navigate(`/teammates/${d.id}`)}>Открыть</Button>
-								</div>
-
-								<div className='w-2/5'>
-									<Button onClick={() => handleAddFavourite(d.id)}>Избранное</Button>
+								<div>
+									<Button onClick={() => handleFavourite(d.id)}>{'В избранное'}</Button>
 								</div>
 							</div>
 						</div>

@@ -35,7 +35,6 @@ export const FormProvider = ({ children }) => {
 	const handleSubmit = useCallback(
 		(evt) => {
 			evt.preventDefault()
-			console.log(formData)
 		},
 		[formData],
 	)
