@@ -1,7 +1,6 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 import NotFoundPage from './components/pages/NotFoundPage.jsx'
-import MainPage from './components/pages/MainPage'
 import TeammatesLayout from './layouts/TeammatesLayout'
 import TeammatesListPage from './components/pages/TeammatesListPage'
 import TeammatePage from './components/pages/TeammatePage'
@@ -11,7 +10,7 @@ import AuthLayout from './layouts/AuthLayout.jsx'
 import FavouritePage from './components/pages/FavouritePage.jsx'
 
 export const routes = [
-	{ path: '', element: <MainPage /> },
+	{ path: '', element: <Navigate to='teammates' /> },
 	{
 		path: 'auth',
 		element: <AuthLayout />,

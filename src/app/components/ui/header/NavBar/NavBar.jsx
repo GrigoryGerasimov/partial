@@ -8,14 +8,14 @@ const NavBar = () => {
 				to='/teammates'
 				className='inline-block my-2.5 mx-7 transition duration-400 hover:text-indigo-500'
 			>
-				Наша команда
+				Команда
 			</NavLink>
 
 			<NavLink
 				to='/favourite'
 				className='inline-block my-2.5 mx-7 transition duration-400 hover:text-indigo-500'
 			>
-				Favourite
+				Избранное
 			</NavLink>
 		</div>
 	)
