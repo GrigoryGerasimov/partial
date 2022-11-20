@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { useReceiveTeammatesQuery } from '../../../store/api'
 
 const BreadcrumbsLayout = () => {
-	const { data } = useReceiveTeammatesQuery({
+	const { isLoading, data } = useReceiveTeammatesQuery({
 		refetchOnFocus: true,
 	})
 	const location = useLocation()
@@ -19,15 +19,16 @@ const BreadcrumbsLayout = () => {
 		'/favourite': '/Избранное',
 	}
 
-
 	return (
-		<>
-			<h1>
-				{location.pathname.split('/').length > 2
-					? `/Наша команда/${getNameById(location.pathname.split('/')[2])}`
-					: routeNames[location.pathname]}
-			</h1>
-		</>
+		!isLoading && (
+			<>
+				<h1>
+					{location.pathname.split('/').length > 2
+						? `/Наша команда/${getNameById(location.pathname.split('/')[2])}`
+						: routeNames[location.pathname]}
+				</h1>
+			</>
+		)
 	)
 }
 
