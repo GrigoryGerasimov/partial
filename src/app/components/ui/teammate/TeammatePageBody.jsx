@@ -7,23 +7,20 @@ import TeammatePageInterestsBlock from './TeammatePageInterestsBlock.jsx'
 import Button from '../../common/Button'
 import TeamateProgress from './TeamatePageProgress.jsx'
 import PropTypes from 'prop-types'
-import favouriteService from '../../../services/favouriteService.js'
+import TeammateFavoriteButton from '../../common/TeammateFavoriteButton.jsx'
 
 const TeammatePageBody = ({ data }) => {
 	const navigate = useNavigate()
 
-	const handleAddFavourite = (id) => {
-		// fix ???
-		favouriteService.addFavourite(id)
-	}
-
 	return (
 		<div className='pt-20 mb-10 relative'>
 			<div className='absolute top-0 left-0'>
-				<Button onClick={() => navigate(-1)}>К команде разработки</Button>
+				<Button color='indigo-500' isRounded={true} onClick={() => navigate(-1)}>
+					К команде разработки
+				</Button>
 			</div>
 			<div className='absolute top-0 right-0'>
-				<Button onClick={() => handleAddFavourite(data.id)}>Избранное</Button>
+				<TeammateFavoriteButton id={data.id} />
 			</div>
 			<div className='flex mb-10 mx-[-16px] flex-wrap align-center justify-center gap-4'>
 				<div className='max-w-xl px-4'>

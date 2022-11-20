@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = ({ color, func, type, isRounded, children }) => {
+const Button = ({ color, func, type, isRounded, children, ...rest }) => {
 	return (
 		<button
 			className={`inline-block w-[100%] p-3 bg-${color} ${
@@ -9,6 +9,7 @@ const Button = ({ color, func, type, isRounded, children }) => {
 			} text-slate-50 border-2 border-slate-50 transition duration-400 hover:text-indigo-500 hover:bg-slate-50 hover:border-indigo-500`}
 			onClick={func}
 			type={type}
+			{...rest}
 		>
 			{children}
 		</button>

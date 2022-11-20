@@ -12,17 +12,32 @@ const favouriteService = {
 		const data = JSON.parse(localStorage.getItem(FAVOURITE_KEY))
 		return data
 	},
-	addFavourite: (id) => {
+	checkFavourite: (id) => {
+		let flag = true
 		const data = JSON.parse(localStorage.getItem(FAVOURITE_KEY))
-		const dataIndex = data.findIndex((f) => f._id === id)
+		if (data) {
+			const dataIndex = data.findIndex((f) => f._id === id)
+			if (dataIndex === -1) {
+				flag = false
+			}
+		} else {
+			flag = false
+		}
 
-		if (dataIndex === -1) {
+		return flag
+	},
+	addFavourite: (id) => {
+		const isFavoriteId = favouriteService.checkFavourite(id)
+		const data = JSON.parse(localStorage.getItem(FAVOURITE_KEY))
+
+		if (!isFavoriteId) {
 			const addData = { _id: id }
 			data.push(addData)
 			localStorage.setItem(FAVOURITE_KEY, JSON.stringify(data))
 		}
 		return data
 	},
+
 	removeFavourite: (id) => {
 		const data = JSON.parse(localStorage.getItem(FAVOURITE_KEY))
 		const dataWithRemovedId = data.filter((f) => f._id !== id)

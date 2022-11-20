@@ -64,9 +64,10 @@ const FavouritePage = () => {
 											<Button
 												func={() => navigate(`/teammates/${t.id}`)}
 												color='indigo-500'
-												name='Открыть'
 												isRounded={true}
-											/>
+											>
+												Открыть
+											</Button>
 										</div>
 
 										<div className='w-2/5'>
