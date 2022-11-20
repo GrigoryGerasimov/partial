@@ -53,7 +53,7 @@ const TeammatePageBody = ({ data }) => {
 			</div>
 
 			<div className='flex flex-wrap place-content-center gap-4'>
-				<div className='px-4'>
+				<div className='px-4 basis-120'>
 					<span className='block mb-4 text-3xl font-bold'>Задачи на проекте:</span>
 
 					<ul className='text-xl capitalize'>
@@ -64,9 +64,9 @@ const TeammatePageBody = ({ data }) => {
 						))}
 					</ul>
 				</div>
-				<div className='px-4'>
+				<div className='px-4 basis-[590px]'>
 					<TeammatePageInterestsBlock
-						interestsBlockClass='mb-11 mx-[-16px]'
+						interestsBlockClass='mb-11 mx-[-16px]  p-4'
 						hobbiesList={data.hobbies}
 					/>
 				</div>
