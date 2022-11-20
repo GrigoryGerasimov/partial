@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export const TeammateInfo = ({ infoClass, data }) => {
 	return (
 		<article className={infoClass}>
-			<Link to={data.id}>
+			<Link to={`/teammates/${data.id}`}>
 				<div className='text-3xl mb-2 hover:text-violet-800'>
 					{`${data.firstName} ${data.lastName}`}
 				</div>
