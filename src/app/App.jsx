@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import BreadcrumbsLayout from './components/ui/breadcrumbs/BreadcrumbsLayout'
 import favoriteService from './services/favoriteService'
-import Background from './components/ui/background'
+import Background from './components/ui/Background'
 
 // init favorite
 favoriteService.initFavorite()

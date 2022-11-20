@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import TeammateCard from '../ui/temmateCard'
+import TeammateCard from '../ui/teammateCard'
 import { useReceiveTeammatesQuery } from '../../store/api'
 import Button from '../common/Button'
 import favoriteService from '../../services/favoriteService'
-import ComponentTitle from '../common/componentTitle'
-import ComponentContainer from '../common/componentContainer'
+import ComponentTitle from '../common/Title'
+import ComponentContainer from '../common/Container'
 import { useNavigate } from 'react-router-dom'
 
 const FavoritePage = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ComponentContainer from '../common/componentContainer.jsx'
+import ComponentContainer from '../common/Container.jsx'
 
 import TeammatesListPage from './TeammatesListPage.jsx'
 
