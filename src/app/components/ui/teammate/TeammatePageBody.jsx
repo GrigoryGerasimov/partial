@@ -12,9 +12,8 @@ import PropTypes from 'prop-types'
 
 const TeammatePageBody = ({ data }) => {
 	const navigate = useNavigate()
-	console.log(data)
-	//    max-w-full leading-10 text-center
-	return (
+
+	return data && (
 		<div className='flex flex-col mt-5'>
 			<div className='flex flex-row gap-5 flex-wrap justify-center '>
 				<div className='lg:w-1/2 md:w-1/2 sm:w-full'>
