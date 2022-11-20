@@ -8,7 +8,9 @@ import ComponentTitle from '../common/Title.jsx'
 
 const TeammatePage = () => {
 	const { mateId } = useParams()
-	const { isLoading, isSuccess, data: teammate } = useReceiveTeammatesByIdQuery(mateId)
+	const { isLoading, isSuccess, data: teammate } = useReceiveTeammatesByIdQuery(mateId, {
+		refetchOnFocus: true,
+	})
 
 	return (
 		<ContainerWrapper wrapperClass='max-w-full my-0 mx-auto'>

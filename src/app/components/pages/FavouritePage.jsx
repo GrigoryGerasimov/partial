@@ -2,21 +2,23 @@ import React, { useEffect, useState } from 'react'
 import TeammateCard from '../ui/teammateCard'
 import { useReceiveTeammatesQuery } from '../../store/api'
 import Button from '../common/Button'
-import favoriteService from '../../services/favoriteService'
+import favouriteService from '../../services/favouriteService'
 import ComponentTitle from '../common/Title'
 import ComponentContainer from '../common/Container'
 import { useNavigate } from 'react-router-dom'
 
-const FavoritePage = () => {
-	const { data } = useReceiveTeammatesQuery()
+const FavouritePage = () => {
+	const { data } = useReceiveTeammatesQuery({
+		refetchOnFocus: true,
+	})
 	const navigate = useNavigate()
-	const [favorite, setFavorite] = useState(favoriteService.getFavorite)
+	const [favourite, setFavourite] = useState(favouriteService.getFavourite)
 	const [renderData, setRenderData] = useState()
 
 	useEffect(() => {
-		const favoriteTeameate = filterDataTeam(favorite, data)
-		setRenderData(favoriteTeameate)
-	}, [data, favorite])
+		const favouriteTeammate = filterDataTeam(favourite, data)
+		setRenderData(favouriteTeammate)
+	}, [data, favourite])
 
 	function filterDataTeam(dataIdsFromLocal, data) {
 		const returnData = []
@@ -30,15 +32,15 @@ const FavoritePage = () => {
 		return returnData
 	}
 
-	const handleRemoveFavoriteOnPage = (id) => {
-		favoriteService.removeFavorite(id)
-		const favoriteWithRemovedId = favorite.filter((f) => f._id !== id)
-		setFavorite(favoriteWithRemovedId)
+	const handleRemoveFavouriteOnPage = (id) => {
+		favouriteService.removeFavourite(id)
+		const favouriteWithRemovedId = favourite.filter((f) => f._id !== id)
+		setFavourite(favouriteWithRemovedId)
 	}
 
 	return (
 		<ComponentContainer>
-			<ComponentTitle title='Favorite Teammates' />
+			<ComponentTitle title='Favourite Teammates' />
 			<div className='flex flex-wrap justify-around'>
 				{renderData && renderData.length !== 0 ? (
 					renderData.map((t) => (
@@ -54,7 +56,7 @@ const FavoritePage = () => {
 									</div>
 
 									<div className='w-2/5'>
-										<Button onClick={() => handleRemoveFavoriteOnPage(t.id)}>
+										<Button onClick={() => handleRemoveFavouriteOnPage(t.id)}>
 											Remove
 										</Button>
 									</div>
@@ -70,4 +72,4 @@ const FavoritePage = () => {
 	)
 }
 
-export default FavoritePage
+export default FavouritePage

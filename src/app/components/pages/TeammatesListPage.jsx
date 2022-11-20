@@ -4,7 +4,7 @@ import Loader from '../common/Loader'
 import { useReceiveTeammatesQuery } from '../../store/api.js'
 import ComponentTitle from '../common/Title'
 import { useNavigate } from 'react-router-dom'
-import favoriteService from '../../services/favoriteService'
+import favouriteService from '../../services/favouriteService'
 import Button from '../common/Button.jsx'
 
 const TeammatesListPage = () => {
@@ -13,8 +13,8 @@ const TeammatesListPage = () => {
 		refetchOnFocus: true,
 	})
 
-	const handleAddFavorite = (id) => {
-		favoriteService.addFavorite(id)
+	const handleAddFavourite = (id) => {
+		favouriteService.addFavourite(id)
 	}
 
 	return !isLoading && isSuccess ? (
@@ -32,7 +32,7 @@ const TeammatesListPage = () => {
 								</div>
 
 								<div className='w-2/5'>
-									<Button onClick={() => handleAddFavorite(d.id)}>Избранное</Button>
+									<Button onClick={() => handleAddFavourite(d.id)}>Избранное</Button>
 								</div>
 							</div>
 						</div>

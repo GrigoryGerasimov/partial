@@ -5,7 +5,9 @@ import Loader from '../../common/Loader.jsx'
 import PropTypes from 'prop-types'
 
 const TeammatePageInterestsBlock = ({ interestsBlockClass, hobbiesList }) => {
-	const { isLoading, isSuccess, data } = useReceiveHobbiesQuery()
+	const { isLoading, isSuccess, data } = useReceiveHobbiesQuery({
+		refetchOnFocus: true,
+	})
 
 	return !isLoading && isSuccess ? (
 		<article className={interestsBlockClass}>
