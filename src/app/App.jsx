@@ -1,13 +1,12 @@
 import React from 'react'
-import Header from './components/ui/header/Header'
 import { useRoutes } from 'react-router-dom'
-import { routes } from './routes.jsx'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Header from './components/ui/header/Header'
+import { routes } from './routes.jsx'
 
-import BreadcrumbsLayout from './components/ui/breadcrumbs/BreadcrumbsLayout'
-import favoriteService from './services/favoriteService'
 import Background from './components/ui/background'
+import favoriteService from './services/favoriteService'
 
 // init favorite
 favoriteService.initFavorite()
@@ -17,7 +16,7 @@ const App = () => {
 		<div className='isolate bg-white '>
 			<Background />
 			<Header />
-			<BreadcrumbsLayout>{useRoutes(routes)}</BreadcrumbsLayout>
+			{useRoutes(routes)}
 			<ToastContainer />
 		</div>
 	)
