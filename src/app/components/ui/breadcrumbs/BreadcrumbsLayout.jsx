@@ -15,7 +15,7 @@ const BreadcrumbsLayout = () => {
 	const routeNames = {
 		'/': '/Наша команда',
 		'/teammates': '/Наша команда',
-		'/favorite': '/Избранное',
+		'/favourite': '/Избранное',
 	}
 
 	return (
