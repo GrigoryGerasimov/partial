@@ -8,7 +8,7 @@ const TeammateCard = ({ data }) => {
 	return (
 		data && (
 			<>
-				<Link to={data.id}>
+				<Link to={`/teammates/${data.id}`}>
 					<TeammatePic
 						imgClass='w-[100%] h-56 rounded-2xl object-cover transition hover:scale-105'
 						imgPath={data.imgPath}
