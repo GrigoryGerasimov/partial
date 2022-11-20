@@ -5,7 +5,8 @@ const favouriteService = {
 	initFavourite: () => {
 		if (!localStorage.getItem(FAVOURITE_KEY)) {
 			localStorage.setItem(FAVOURITE_KEY, JSON.stringify(favourite))
-		}
+			return favourite
+		} else return JSON.parse(localStorage.getItem(FAVOURITE_KEY))
 	},
 	getFavourite: () => {
 		const data = JSON.parse(localStorage.getItem(FAVOURITE_KEY))
