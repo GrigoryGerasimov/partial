@@ -4,17 +4,19 @@ import Loader from '../common/Loader'
 import { useReceiveTeammatesQuery } from '../../store/api.js'
 import ComponentTitle from '../common/Title'
 import { useNavigate } from 'react-router-dom'
-import favouriteService from '../../services/favouriteService'
+import { useDispatch } from 'react-redux'
+import { add } from '../../store/favouriteSlice.js'
 import Button from '../common/Button.jsx'
 
 const TeammatesListPage = () => {
+	const dispatch = useDispatch()
 	const navigate = useNavigate()
 	const { isLoading, isSuccess, data } = useReceiveTeammatesQuery({
 		refetchOnFocus: true,
 	})
 
 	const handleAddFavourite = (id) => {
-		favouriteService.addFavourite(id)
+		dispatch(add(id))
 	}
 
 	return !isLoading && isSuccess ? (
