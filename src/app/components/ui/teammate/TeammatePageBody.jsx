@@ -1,12 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import TeammatePic from '../temmateCard/TeammatePic.jsx'
+import TeammatePic from '../teammateCard/TeammatePic.jsx'
 import TeammatePageInfo from './TeammatePageInfo.jsx'
 import TeammatePageContactsList from './TeammatePageContactsList.jsx'
 import TeammatePageInterestsBlock from './TeammatePageInterestsBlock.jsx'
 import TeammatePageFeedback from './TeammatePageFeedback.jsx'
 import Button from '../../common/Button'
-import TeamateProgress from '../temmateCard/TeamateProgress.jsx'
+import TeamateProgress from '../teammateCard/TeamateProgress.jsx'
 import { BoldText, ListElement, UnorderedList } from '../typography'
 import PropTypes from 'prop-types'
 
@@ -27,9 +27,7 @@ const TeammatePageBody = ({ data }) => {
 						<BoldText>Задачи на проекте:</BoldText>
 						<UnorderedList>
 							{data.tasks.map(task => (
-								<ListElement key={task.length}>
-									{task}
-								</ListElement>
+								<ListElement key={task.length}>{task}</ListElement>
 							))}
 						</UnorderedList>
 					</div>

@@ -1,8 +1,10 @@
 import React from 'react'
 import NavBar from './NavBar'
 import NavLogo from './NavLogo'
+
 import AuthLinks from './authLinks'
 import BreadcrumbsLayout from '../breadcrumbs/BreadcrumbsLayout'
+
 
 const Header = () => {
 	return (

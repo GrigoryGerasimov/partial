@@ -12,10 +12,10 @@ const NavBar = () => {
 			</NavLink>
 
 			<NavLink
-				to='/favorite'
+				to='/favourite'
 				className='inline-block my-2.5 mx-7 transition duration-400 hover:text-indigo-500'
 			>
-				Favorite
+				Favourite
 			</NavLink>
 		</div>
 	)

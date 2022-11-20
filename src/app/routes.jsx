@@ -5,10 +5,10 @@ import MainPage from './components/pages/MainPage'
 import TeammatesLayout from './layouts/TeammatesLayout'
 import TeammatesListPage from './components/pages/TeammatesListPage'
 import TeammatePage from './components/pages/TeammatePage'
-import LoginPage from './components/pages/loginPage'
-import SingupPage from './components/pages/singupPage'
-import AuthLayout from './layouts/authLayout.jsx'
-import FavoritePage from './components/pages/favoritePage.jsx'
+import LoginPage from './components/pages/LoginPage'
+import SingupPage from './components/pages/SingupPage'
+import AuthLayout from './layouts/AuthLayout.jsx'
+import FavouritePage from './components/pages/FavouritePage.jsx'
 
 export const routes = [
 	{ path: '', element: <MainPage /> },
@@ -44,8 +44,8 @@ export const routes = [
 		],
 	},
 	{
-		path: 'favorite',
-		element: <FavoritePage />,
+		path: 'favourite',
+		element: <FavouritePage />,
 	},
 	{ path: '*', element: <NotFoundPage /> },
 ]

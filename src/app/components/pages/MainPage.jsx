@@ -1,19 +1,13 @@
 import React from 'react'
-
-import ComponentContainer from '../common/componentContainer.jsx'
-
-import TeammatesListPage from './TeammatesListPage.jsx'
+import { Navigate } from 'react-router-dom'
+import ComponentContainer from '../common/Container.jsx'
 
 const Main = () => {
 	return (
 		<main>
-
 			<ComponentContainer>
-				<TeammatesListPage />
+				<Navigate to='teammates'/>
 			</ComponentContainer>
-
-			<TeammatesListPage />
-
 		</main>
 	)
 }

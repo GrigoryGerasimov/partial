@@ -5,7 +5,9 @@ import Loader from '../../common/Loader'
 import PropTypes from 'prop-types'
 
 const TeammatePageContactsList = ({ contactsListClass, contacts }) => {
-	const { isLoading, isSuccess, data: contactsData } = useReceiveSocialnetsQuery()
+	const { isLoading, isSuccess, data: contactsData } = useReceiveSocialnetsQuery({
+		refetchOnFocus: true,
+	})
 
 	return !isLoading && isSuccess ? (
 		<article className={contactsListClass}>
