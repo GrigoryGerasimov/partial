@@ -6,9 +6,11 @@ import ComponentTitle from '../common/Title'
 import { useDispatch } from 'react-redux'
 import { add } from '../../store/favouriteSlice.js'
 import Button from '../common/Button.jsx'
+import { useNavigate } from 'react-router-dom'
 
 const TeammatesListPage = () => {
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 	const { isLoading, isSuccess, data } = useReceiveTeammatesQuery({
 		refetchOnFocus: true,
 	})
@@ -27,27 +29,24 @@ const TeammatesListPage = () => {
 							<TeammateCard data={d} />
 
 							<div className='flex justify-around px-2 mb-5'>
-
 								<div className='w-2/5'>
 									<Button
 										func={() => navigate(`/teammates/${d.id}`)}
-										name='Открыть'
 										color='indigo-500'
 										isRounded={true}
-									/>
+									>
+										Открыть
+									</Button>
 								</div>
 
 								<div className='w-2/5'>
 									<Button
 										func={() => handleAddFavourite(d.id)}
-										name='Избранное'
 										color='indigo-500'
 										isRounded={true}
-									/>
-
-								<div>
-									<Button onClick={() => handleAddFavourite(d.id)}>Избранное</Button>
-
+									>
+										Избранное
+									</Button>
 								</div>
 							</div>
 						</div>
