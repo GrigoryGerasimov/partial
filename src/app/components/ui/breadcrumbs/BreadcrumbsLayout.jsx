@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom'
 
 const BreadcrumbsLayout = ({ children }) => {
 	const location = useLocation()
-	console.log(location)
 	return (
 		<>
 			<h1>{location.pathname}</h1>

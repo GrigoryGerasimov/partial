@@ -33,11 +33,7 @@ const LoginPage = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		const isValid = validate()
-		if (!isValid) return
-		console.log(data)
 	}
-
 	return (
 		<>
 			<Card.Title>Log In</Card.Title>

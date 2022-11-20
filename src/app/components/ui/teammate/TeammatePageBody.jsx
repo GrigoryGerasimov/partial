@@ -6,13 +6,12 @@ import TeammatePageContactsList from './TeammatePageContactsList.jsx'
 import TeammatePageInterestsBlock from './TeammatePageInterestsBlock.jsx'
 import TeammatePageFeedback from './TeammatePageFeedback.jsx'
 import Button from '../../common/Button'
-import TeamateProgress from '../teammateCard/TeamateProgress.jsx'
+import TeamateProgress from './TeamatePageProgress.jsx'
 import { BoldText, ListElement, UnorderedList } from '../typography'
 import PropTypes from 'prop-types'
 
 const TeammatePageBody = ({ data }) => {
 	const navigate = useNavigate()
-	console.log(data)
 	//    max-w-full leading-10 text-center
 	return (
 		<div className='flex flex-col mt-5'>
@@ -26,7 +25,7 @@ const TeammatePageBody = ({ data }) => {
 						<div className='border border-red-700 border-4'>BOOKMARK</div>
 						<BoldText>Задачи на проекте:</BoldText>
 						<UnorderedList>
-							{data.tasks.map(task => (
+							{data.tasks.map((task) => (
 								<ListElement key={task.length}>{task}</ListElement>
 							))}
 						</UnorderedList>
