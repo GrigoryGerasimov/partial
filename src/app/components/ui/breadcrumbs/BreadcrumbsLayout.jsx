@@ -7,6 +7,7 @@ const BreadcrumbsLayout = () => {
 		refetchOnFocus: true,
 	})
 	const location = useLocation()
+
 	const getNameById = (id) => {
 		return `${data.find((u) => u.id === id).firstName} ${
 			data.find((u) => u.id === id).lastName
@@ -17,6 +18,7 @@ const BreadcrumbsLayout = () => {
 		'/teammates': '/Наша команда',
 		'/favourite': '/Избранное',
 	}
+
 
 	return (
 		<>
