@@ -19,24 +19,16 @@ const TeammatePageBody = ({ data }) => {
 
 	return (
 		<div className='pt-20 mb-10 relative'>
-			<div className='w-1/5 absolute top-0 left-0'>
-				<Button
-					func={() => navigate(-1)}
-					name='К команде разработки'
-					isRounded={true}
-					color='indigo-500'
-				/>
+
+			<div className='absolute top-0 left-0'>
+				<Button onClick={() => navigate(-1)}>К команде разработки</Button>
 			</div>
-			<div className='w-1/5 absolute top-0 right-0'>
-				<Button
-					func={() => handleAddFavourite(data.id)}
-					name='Избранное'
-					isRounded={true}
-					color='indigo-500'
-				/>
+			<div className='absolute top-0 right-0'>
+				<Button onClick={() => handleAddFavourite(data.id)}>Избранное</Button>
+
 			</div>
-			<div className='flex mb-10 mx-[-16px]'>
-				<div className='w-[50%] px-4'>
+			<div className='flex mb-10 mx-[-16px] flex-wrap align-center justify-center gap-4'>
+				<div className='max-w-xl px-4'>
 					<div className='flex flex-col h-[100%] justify-between'>
 						<TeammatePic
 							imgClass='block rounded-lg object-cover'
@@ -57,15 +49,15 @@ const TeammatePageBody = ({ data }) => {
 						</div>
 					</div>
 				</div>
-				<div className='flex w-[50%] px-4 justify-around'>
+				<div className='flex px-4 justify-around'>
 					<div className='w-[90%] '>
 						<TeammatePageInfo infoClass='flex flex-col gap-2' data={data} />
 					</div>
 				</div>
 			</div>
 
-			<div className='flex'>
-				<div className='w-[50%] px-4'>
+			<div className='flex flex-wrap place-content-between gap-4'>
+				<div className='max-w-lg px-4'>
 					<span className='block mb-4 text-3xl font-bold'>Задачи на проекте:</span>
 
 					<ul className='text-xl capitalize'>
@@ -76,7 +68,7 @@ const TeammatePageBody = ({ data }) => {
 						))}
 					</ul>
 				</div>
-				<div className='w-[50%] px-4'>
+				<div className='max-w-lg px-4'>
 					<TeammatePageInterestsBlock
 						interestsBlockClass='mb-11'
 						hobbiesList={data.hobbies}
