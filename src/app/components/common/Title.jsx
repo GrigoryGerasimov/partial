@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ComponentTitle = ({ title }) => {
+const Title = ({ title }) => {
 	return (
 		<div className='my-[50px] text-slate-900 text-center text-6xl capitalize'>
 			<div>{title}</div>
@@ -9,8 +9,8 @@ const ComponentTitle = ({ title }) => {
 	)
 }
 
-ComponentTitle.propTypes = {
+Title.propTypes = {
 	title: PropTypes.string,
 }
 
-export default ComponentTitle
+export default Title

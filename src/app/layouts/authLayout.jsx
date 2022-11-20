@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Card from '../components/common/card'
+import Card from '../components/common/Сard'
 
 const AuthLayout = () => {
 	return (

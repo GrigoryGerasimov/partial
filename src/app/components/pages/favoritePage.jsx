@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import TeammateCard from '../ui/temmateCard'
+import TeammateCard from '../ui/teammateCard'
 import { useReceiveTeammatesQuery } from '../../store/api'
 import Button from '../common/Button'
 import favoriteService from '../../services/favoriteService'
-import ComponentTitle from '../common/componentTitle'
-import ComponentContainer from '../common/componentContainer'
+import ComponentContainer from '../common/Container'
+import Title from '../common/Title'
 
 const FavoritePage = () => {
 	const { data } = useReceiveTeammatesQuery()
@@ -36,7 +36,7 @@ const FavoritePage = () => {
 
 	return (
 		<ComponentContainer>
-			<ComponentTitle title='Favorite Teammates' />
+			<Title title='Favorite Teammates' />
 			<div className='flex flex-wrap justify-around'>
 				{renderData && renderData.length !== 0 ? (
 					renderData.map((t) => (

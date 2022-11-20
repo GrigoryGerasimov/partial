@@ -1,8 +1,8 @@
 import React from 'react'
-import TeammateCard from '../ui/temmateCard'
+import TeammateCard from '../ui/teammateCard'
 import Loader from '../common/Loader'
 import { useReceiveTeammatesQuery } from '../../store/api.js'
-import ComponentTitle from '../common/componentTitle'
+import Title from '../common/Title'
 
 const TeammatesListPage = () => {
 	const { isLoading, isSuccess, data } = useReceiveTeammatesQuery({
@@ -11,7 +11,7 @@ const TeammatesListPage = () => {
 
 	return !isLoading && isSuccess ? (
 		<>
-			<ComponentTitle title='Наша команда' />
+			<Title title='Наша команда' />
 			<div className='flex flex-wrap justify-around'>
 				{data.map((teammate) => (
 					<div key={teammate.id} className='w-1/3 flex px-2 justify-around'>

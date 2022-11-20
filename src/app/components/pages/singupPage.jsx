@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import Button from '../../components/common/Button'
-import Card from '../../components/common/card'
+import Button from '../common/Button'
+import Card from '../common/Сard'
 import { signupSchema } from '../../utils/yupSchemas'
-import TextField from '../common/fields/textField'
+import TextField from '../common/fields/TextField'
 
 const SingupPage = () => {
 	const [data, setData] = useState({
