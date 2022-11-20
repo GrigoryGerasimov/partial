@@ -30,11 +30,21 @@ const TeammatesListPage = () => {
 
 							<div className='flex justify-around px-2 mb-5'>
 								<div className='w-2/5'>
-									<Button onClick={() => navigate(`/teammates/${d.id}`)}>Открыть</Button>
+									<Button
+										func={() => navigate(`/teammates/${d.id}`)}
+										name='Открыть'
+										color='indigo-500'
+										isRounded={true}
+									/>
 								</div>
 
 								<div className='w-2/5'>
-									<Button onClick={() => handleAddFavourite(d.id)}>Избранное</Button>
+									<Button
+										func={() => handleAddFavourite(d.id)}
+										name='Избранное'
+										color='indigo-500'
+										isRounded={true}
+									/>
 								</div>
 							</div>
 						</div>

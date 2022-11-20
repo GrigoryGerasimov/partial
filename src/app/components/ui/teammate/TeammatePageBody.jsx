@@ -20,10 +20,20 @@ const TeammatePageBody = ({ data }) => {
 	return (
 		<div className='pt-20 mb-10 relative'>
 			<div className='w-1/5 absolute top-0 left-0'>
-				<Button onClick={() => navigate(-1)}>К команде разработки</Button>
+				<Button
+					func={() => navigate(-1)}
+					name='К команде разработки'
+					isRounded={true}
+					color='indigo-500'
+				/>
 			</div>
 			<div className='w-1/5 absolute top-0 right-0'>
-				<Button onClick={() => handleAddFavourite(data.id)}>Избранное</Button>
+				<Button
+					func={() => handleAddFavourite(data.id)}
+					name='Избранное'
+					isRounded={true}
+					color='indigo-500'
+				/>
 			</div>
 			<div className='flex mb-10 mx-[-16px]'>
 				<div className='w-[50%] px-4'>
