@@ -27,8 +27,27 @@ const TeammatesListPage = () => {
 							<TeammateCard data={d} />
 
 							<div className='flex justify-around px-2 mb-5'>
+
+								<div className='w-2/5'>
+									<Button
+										func={() => navigate(`/teammates/${d.id}`)}
+										name='Открыть'
+										color='indigo-500'
+										isRounded={true}
+									/>
+								</div>
+
+								<div className='w-2/5'>
+									<Button
+										func={() => handleAddFavourite(d.id)}
+										name='Избранное'
+										color='indigo-500'
+										isRounded={true}
+									/>
+
 								<div>
 									<Button onClick={() => handleAddFavourite(d.id)}>Избранное</Button>
+
 								</div>
 							</div>
 						</div>
